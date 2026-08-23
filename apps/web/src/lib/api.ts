@@ -21,22 +21,37 @@ export type ExportResponse = {
 };
 
 /**
- * Resolve API base URL.
- * - Local: http://localhost:8000
- * - Vercel: always same-origin /api-backend (server proxies via API_ORIGIN)
- * - Optional absolute override only when not on Vercel
+ * Resolve API base URL at call time (not module load).
+ * - Local browser/dev: http://localhost:8000 (or NEXT_PUBLIC_API_URL)
+ * - Any deployed host: same-origin /api-backend (server proxies via API_ORIGIN)
  */
 function resolveApiUrl(): string {
-  // On Vercel, never call an absolute URL from the browser — use the proxy.
-  if (process.env.VERCEL === "1" || process.env.NEXT_PUBLIC_USE_API_PROXY === "1") {
+  // Prefer explicit proxy flag (baked for Vercel builds).
+  if (process.env.NEXT_PUBLIC_USE_API_PROXY === "1") {
     return "/api-backend";
   }
-  const configured = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "").trim();
-  if (configured) return configured;
-  return "http://localhost:8000";
-}
 
-const API_URL = resolveApiUrl();
+  const configured = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "").trim();
+  const isLocalhostUrl =
+    !configured ||
+    configured.includes("localhost") ||
+    configured.includes("127.0.0.1");
+
+  // Browser on a real host must never call localhost.
+  if (typeof window !== "undefined") {
+    const host = window.location.hostname;
+    if (host !== "localhost" && host !== "127.0.0.1") {
+      return "/api-backend";
+    }
+    return isLocalhostUrl ? configured || "http://localhost:8000" : configured;
+  }
+
+  // Server: Vercel always uses the proxy; local SSR may hit the API directly.
+  if (process.env.VERCEL === "1") {
+    return "/api-backend";
+  }
+  return configured || "http://localhost:8000";
+}
 
 function friendlyErrorMessage(status: number, detail: string): string {
   const trimmed = detail.trim();
@@ -60,9 +75,10 @@ function friendlyErrorMessage(status: number, detail: string): string {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  const apiUrl = resolveApiUrl();
   let response: Response;
   try {
-    response = await fetch(`${API_URL}${path}`, {
+    response = await fetch(`${apiUrl}${path}`, {
       ...init,
       headers: {
         "Content-Type": "application/json",
@@ -72,9 +88,9 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
     });
   } catch {
     throw new Error(
-      API_URL.startsWith("/")
+      apiUrl.startsWith("/")
         ? "Cannot reach the API proxy. Deploy apps/api, set API_ORIGIN on the web project to that URL, then redeploy."
-        : `Cannot reach API at ${API_URL}.`,
+        : `Cannot reach API at ${apiUrl}.`,
     );
   }
   if (!response.ok) {
@@ -90,7 +106,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export function getApiUrl(): string {
-  return API_URL;
+  return resolveApiUrl();
 }
 
 export async function createSession(): Promise<SessionSnapshot> {
@@ -145,7 +161,8 @@ export async function fetchVoiceConfig(): Promise<VoiceConfig> {
 }
 
 export async function fetchTtsAudio(text: string): Promise<Blob> {
-  const response = await fetch(`${API_URL}/voice/tts`, {
+  const apiUrl = resolveApiUrl();
+  const response = await fetch(`${apiUrl}/voice/tts`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ text }),
@@ -159,6 +176,7 @@ export async function fetchTtsAudio(text: string): Promise<Blob> {
 }
 
 export async function fetchSttTranscript(blob: Blob): Promise<string> {
+  const apiUrl = resolveApiUrl();
   const form = new FormData();
   const extension = blob.type.includes("mp4")
     ? "mp4"
@@ -166,7 +184,7 @@ export async function fetchSttTranscript(blob: Blob): Promise<string> {
       ? "ogg"
       : "webm";
   form.append("audio", blob, `speech.${extension}`);
-  const response = await fetch(`${API_URL}/voice/stt`, {
+  const response = await fetch(`${apiUrl}/voice/stt`, {
     method: "POST",
     body: form,
     cache: "no-store",

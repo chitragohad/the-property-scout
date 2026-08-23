@@ -2,5 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "cd ../.. && pnpm install",
-  "buildCommand": "cd ../.. && pnpm --filter web build"
+  "buildCommand": "cd ../.. && pnpm --filter web build",
+  "env": {
+    "NEXT_PUBLIC_USE_API_PROXY": "1"
+  }
 }
