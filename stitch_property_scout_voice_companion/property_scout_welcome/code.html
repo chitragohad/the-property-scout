@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Property Scout - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#0e6a5b",
+                        "secondary": "#50625d",
+                        "user-bubble": "#E8F2EF",
+                        "tertiary-fixed": "#d6e6dd",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#99e8d5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#3c4a43",
+                        "secondary-fixed": "#d3e7e0",
+                        "background": "#fdf9f1",
+                        "on-secondary-container": "#566863",
+                        "inverse-surface": "#31302b",
+                        "on-surface": "#1c1c17",
+                        "inverse-on-surface": "#f4f0e8",
+                        "on-background": "#1c1c17",
+                        "on-primary-fixed-variant": "#005144",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#0f6b5c",
+                        "tertiary-container": "#53625b",
+                        "error-bg": "#FDEEEE",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#86d5c3",
+                        "primary-fixed": "#a2f2de",
+                        "surface-variant": "#e6e2da",
+                        "primary": "#005145",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#3f4946",
+                        "muted": "#5C6B64",
+                        "inverse-primary": "#86d5c3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dddad2",
+                        "tertiary-fixed-dim": "#bacac1",
+                        "surface-container-low": "#f7f3eb",
+                        "on-tertiary-container": "#cdddd4",
+                        "surface-bright": "#fdf9f1",
+                        "surface-container-highest": "#e6e2da",
+                        "on-tertiary-fixed": "#101e19",
+                        "error-text": "#8A2F2F",
+                        "on-tertiary-fixed-variant": "#3b4a43",
+                        "secondary-container": "#d3e7e0",
+                        "outline": "#6f7976",
+                        "outline-variant": "#bec9c5",
+                        "surface-container-high": "#ece8e0",
+                        "on-primary-fixed": "#00201a",
+                        "on-secondary-fixed": "#0d1f1b",
+                        "on-secondary-fixed-variant": "#394a45",
+                        "assistant-bubble": "#FFFDF9",
+                        "on-error-container": "#93000a",
+                        "surface": "rgba(255, 255, 255, 0.88)",
+                        "surface-container": "#f1ede5",
+                        "recording-red": "#EF4444",
+                        "secondary-fixed-dim": "#b7cbc4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "16px",
+                        "max-width": "1200px",
+                        "base": "4px",
+                        "lg": "40px",
+                        "xs": "8px",
+                        "md": "24px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Libre Caslon Text"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "code-sm": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "code-sm": ["13px", { "lineHeight": "1.5", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .structural-border {
+            border: 1px solid rgba(28, 42, 36, 0.12); /* Ink color at 12% */
+        }
+        .active-border {
+            border: 1px solid #005145; /* Eucalyptus Teal */
+        }
+        .mic-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col md:flex-row">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden lg:flex flex-col h-full w-64 fixed left-0 top-0 py-xl px-md border-r border-on-surface/10 bg-surface z-50">
+<div class="mb-lg">
+<h1 class="font-display-lg text-primary text-headline-sm">Property Scout</h1>
+<p class="font-body-md text-on-surface-variant text-sm mt-xs">Bengaluru · voice-first discovery</p>
+</div>
+<div class="flex flex-col gap-sm mt-lg flex-grow">
+<!-- Active: Home -->
+<a class="flex items-center gap-sm px-sm py-xs text-primary font-bold border-r-2 border-primary hover:bg-surface-container-high transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-caps uppercase text-label-caps">Home</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-label-caps uppercase text-label-caps">Shortlist</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label-caps uppercase text-label-caps">History</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-xs text-on-surface-variant hover:bg-surface-container-high transition-all mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-caps uppercase text-label-caps">Help</span>
+</a>
+</div>
+</nav>
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden w-full h-auto py-md flex justify-between items-center px-lg bg-background border-b border-on-surface/10 z-40 relative">
+<h1 class="font-display-lg-mobile text-primary">Property Scout</h1>
+<button class="text-primary p-xs hover:bg-surface-container-low transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-64 p-md md:p-lg lg:p-xl max-w-max-width mx-auto w-full">
+<!-- Header / Status Area -->
+<header class="flex justify-between items-center mb-xl">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-background">Find your next home</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-xs">Let's narrow down exactly what you're looking for in Bengaluru.</p>
+</div>
+<!-- Phase Badge -->
+<div class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full inline-flex items-center structural-border">
+<span class="w-2 h-2 rounded-full bg-primary mr-2"></span>
+<span class="font-label-caps uppercase text-label-caps">IDLE</span>
+</div>
+</header>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg lg:gap-xl">
+<!-- Left Column: Voice Interaction (7 cols) -->
+<section class="lg:col-span-7 flex flex-col justify-center items-center bg-surface-bright structural-border rounded-xl p-xl min-h-[614px] relative overflow-hidden">
+<!-- Atmospheric background element -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at center, #005145 0%, transparent 70%);"></div>
+<div class="z-10 flex flex-col items-center text-center max-w-md w-full">
+<!-- Mic Button -->
+<button class="w-32 h-32 rounded-full bg-surface-container-lowest structural-border flex items-center justify-center mb-lg hover:border-primary transition-colors group relative cursor-pointer active-border">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:scale-110 transition-transform duration-300" data-icon="mic" style="font-size: 48px;">mic</span>
+<div class="absolute inset-0 rounded-full border border-primary/20 scale-110 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+<!-- Transcript / Prompt Area -->
+<div class="bg-assistant-bubble structural-border rounded-lg p-md w-full text-left relative">
+<div class="absolute top-md left-md">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="assistant">assistant</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface pl-lg">
+                            "How can I help you find your next home in Bengaluru?"
+                        </p>
+</div>
+<p class="font-label-caps uppercase text-label-caps text-on-surface-variant mt-md opacity-70">
+                        Tap to speak or type your preferences
+                    </p>
+</div>
+</section>
+<!-- Right Column: Preferences Panel (5 cols) -->
+<section class="lg:col-span-5 flex flex-col h-full">
+<div class="bg-surface structural-border rounded-xl p-lg flex-1 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-md border-b border-on-surface/10 pb-xs">Preferences</h3>
+<!-- Empty State / Placeholders -->
+<div class="flex-1 flex flex-col justify-center items-center text-center opacity-60 py-xl">
+<span class="material-symbols-outlined text-4xl text-muted mb-sm" data-icon="tune">tune</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-sm">
+                            We'll build your search profile here as we chat.
+                        </p>
+<!-- Suggestion Chips (Bento-style layout hint) -->
+<div class="grid grid-cols-2 gap-sm w-full mt-lg">
+<div class="bg-surface-container-low border border-on-surface/5 rounded-lg p-sm text-left opacity-50">
+<span class="font-label-caps text-label-caps text-muted block mb-xs">Location</span>
+<span class="font-body-md text-sm text-on-surface line-clamp-1">Where to?</span>
+</div>
+<div class="bg-surface-container-low border border-on-surface/5 rounded-lg p-sm text-left opacity-50">
+<span class="font-label-caps text-label-caps text-muted block mb-xs">Budget</span>
+<span class="font-code-sm text-code-sm text-on-surface line-clamp-1">₹ --,---</span>
+</div>
+<div class="bg-surface-container-low border border-on-surface/5 rounded-lg p-sm text-left opacity-50 col-span-2">
+<span class="font-label-caps text-label-caps text-muted block mb-xs">Must Haves</span>
+<span class="font-body-md text-sm text-on-surface line-clamp-1">Any specific requirements?</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

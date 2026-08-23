@@ -1,0 +1,361 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Property Scout - Search Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#31302b",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#53625b",
+                        "on-surface-variant": "#3f4946",
+                        "inverse-primary": "#86d5c3",
+                        "on-primary-container": "#99e8d5",
+                        "error-container": "#ffdad6",
+                        "surface": "rgba(255, 255, 255, 0.88)",
+                        "surface-variant": "#e6e2da",
+                        "surface-dim": "#dddad2",
+                        "surface-container-high": "#ece8e0",
+                        "background": "#fdf9f1",
+                        "secondary-fixed-dim": "#b7cbc4",
+                        "recording-red": "#EF4444",
+                        "on-primary-fixed": "#00201a",
+                        "secondary-fixed": "#d3e7e0",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#d6e6dd",
+                        "muted": "#5C6B64",
+                        "error-bg": "#FDEEEE",
+                        "surface-tint": "#0e6a5b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f1ede5",
+                        "secondary-container": "#d3e7e0",
+                        "assistant-bubble": "#FFFDF9",
+                        "surface-bright": "#fdf9f1",
+                        "on-secondary-fixed-variant": "#394a45",
+                        "primary-fixed-dim": "#86d5c3",
+                        "surface-container-highest": "#e6e2da",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#566863",
+                        "surface-container-low": "#f7f3eb",
+                        "tertiary": "#3c4a43",
+                        "on-surface": "#1c1c17",
+                        "primary-container": "#0f6b5c",
+                        "error-text": "#8A2F2F",
+                        "user-bubble": "#E8F2EF",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#101e19",
+                        "on-primary-fixed-variant": "#005144",
+                        "primary": "#005145",
+                        "on-background": "#1c1c17",
+                        "primary-fixed": "#a2f2de",
+                        "on-secondary-fixed": "#0d1f1b",
+                        "tertiary-fixed-dim": "#bacac1",
+                        "outline-variant": "#bec9c5",
+                        "inverse-on-surface": "#f4f0e8",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#3b4a43",
+                        "on-primary": "#ffffff",
+                        "outline": "#6f7976",
+                        "on-tertiary-container": "#cdddd4",
+                        "secondary": "#50625d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "40px",
+                        "xs": "8px",
+                        "xl": "64px",
+                        "base": "4px",
+                        "max-width": "1200px",
+                        "sm": "16px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "body-lg": ["Inter"],
+                        "code-sm": ["JetBrains Mono"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "code-sm": ["13px", { "lineHeight": "1.5", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fdf9f1; color: #1c1c17; }
+        .structural-border { border: 1px solid rgba(28, 42, 36, 0.12); }
+        .active-border { border: 1px solid #005145; }
+        
+        /* Material Symbols Setup */
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 300,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        
+        .mic-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden bg-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar -->
+<nav class="hidden lg:flex flex-col h-full py-xl px-md w-64 fixed left-0 top-0 bg-surface border-r border-on-surface/10 z-20">
+<div class="mb-lg">
+<h1 class="font-display-lg text-display-lg-mobile text-primary tracking-tight">Property Scout</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Bengaluru · voice-first discovery</p>
+</div>
+<ul class="space-y-sm flex-1">
+<li class="">
+<a class="flex items-center space-x-sm py-xs px-sm text-primary font-bold border-r-2 border-primary translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-caps text-label-caps uppercase">Home</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center space-x-sm py-xs px-sm text-on-surface-variant hover:bg-surface-container-high transition-all rounded-DEFAULT" href="#">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="font-label-caps text-label-caps uppercase">Shortlist</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center space-x-sm py-xs px-sm text-on-surface-variant hover:bg-surface-container-high transition-all rounded-DEFAULT" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-caps text-label-caps uppercase">History</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto pt-lg border-t border-on-surface/10">
+<a class="flex items-center space-x-sm py-xs px-sm text-on-surface-variant hover:bg-surface-container-high transition-all rounded-DEFAULT" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-caps text-label-caps uppercase">Help</span>
+</a>
+<div class="mt-md flex items-center space-x-sm px-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-on-surface/10">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A close up, professional portrait of a person in a brightly lit modern office setting. The lighting is soft and natural, suggesting a daytime environment. The color palette is warm and inviting, consistent with a high-end concierge service aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGGW7eXng8MXu2gH3ZCO3whr569P66WRi6UCtjH2WIfK2ZqYD_o2njC_WUfahycYyBUVxOVZcNfvwZEn2MPW5BglWI3oyGfQBOhX2QwpoUs3Uu4ZEHKf7ce9HUcX61-yiO5q7MnPsCxZiTHB5vFmqIoiseaqToMknEPnWra2b-Lb8CUddYgvZJfL2comHf1J6QVhu-fSPj1hQQKn57dKXl4ZD_gavr7XBWBli3iAFvazbh8YViP7miOw">
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col lg:ml-64 h-full relative">
+<!-- TopAppBar -->
+<header class="w-full h-auto py-md bg-background border-b border-on-surface/10 flex justify-between items-center px-lg max-w-max-width mx-auto sticky top-0 z-10">
+<div class="md:hidden">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tight">Property Scout</h1>
+</div>
+<div class="hidden md:block">
+<!-- Empty div for alignment on desktop since title is in sidebar -->
+</div>
+<div class="flex items-center space-x-sm">
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-DEFAULT">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<!-- Content Area -->
+<main class="flex-1 overflow-y-auto px-md md:px-lg py-lg flex flex-col lg:flex-row gap-lg max-w-max-width mx-auto w-full pb-32">
+<!-- Listings Column -->
+<div class="flex-1">
+<div class="mb-lg">
+<div class="flex items-start max-w-3xl">
+    <div class="bg-assistant-bubble p-sm rounded-lg structural-border text-body-md font-body-md text-on-background relative">
+        <p class="font-headline-sm text-headline-sm text-primary tracking-tight">I've found 3 matches for you in Koramangala</p>
+    </div>
+</div>
+</div>
+<div class="space-y-sm">
+<!-- Listing 1 -->
+<article class="bg-surface rounded-lg structural-border p-sm md:p-md hover:active-border transition-colors cursor-pointer group">
+<div class="flex flex-col md:flex-row gap-md">
+<div class="w-full md:w-1/3 aspect-[4/3] rounded-DEFAULT overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-quality architectural photograph of a modern apartment building exterior in a lush, green urban setting. The lighting is bright and sunny, casting crisp shadows. The aesthetic is clean, minimalist, and upscale, reflecting a premium real estate lifestyle. The colors are dominated by warm whites, concrete greys, and vibrant greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGYas8W9cOszX5bBUSHfb_sf_17nNtlZmLXBV-Vkbiv2PDGDsOMEOw4ipLiWqc2Rt-RkiYtt7haifiwBOryFc9NxH4ylVP2-Y2x9gu2aOHrq8D6Z4zzUxK-hs9tKZZnv9ilasCaYIGFIs6kvuh1SkCChwi52X12ztG27cgpho-4vXMhjqVaqh3FPKeIDaMsgv2ssxtgdgeCI1bDT3dXR4bXKBiQ8WWO4MXQBjycsQe2SJEEJnSdHlOsw">
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur px-xs py-[2px] rounded-DEFAULT border border-on-surface/10">
+<span class="font-label-caps text-label-caps text-primary uppercase">94% Match</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm text-on-background">Green Glen Layout</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+</div>
+<p class="font-code-sm text-code-sm text-on-background bg-surface-container px-xs py-[2px] inline-block rounded-DEFAULT mb-sm">
+                                        ₹32,000 / mo
+                                    </p>
+<div class="flex items-center space-x-md text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center space-x-xs"><span class="material-symbols-outlined text-[18px]">bed</span><span class="">2BHK</span></span>
+<span class="flex items-center space-x-xs"><span class="material-symbols-outlined text-[18px]">train</span><span class="">500m to Metro</span></span>
+</div>
+</div>
+<div class="mt-md pt-sm border-t border-on-surface/10">
+<p class="font-body-md text-body-md text-muted italic line-clamp-2">"This corner unit offers excellent cross-ventilation and is cited in architectural reviews for its efficient spatial planning."</p>
+</div>
+</div>
+</div>
+</article>
+<!-- Listing 2 -->
+<article class="bg-surface rounded-lg structural-border p-sm md:p-md hover:active-border transition-colors cursor-pointer group">
+<div class="flex flex-col md:flex-row gap-md">
+<div class="w-full md:w-1/3 aspect-[4/3] rounded-DEFAULT overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A serene interior shot of a sunlit living room in an apartment. The room is styled minimally with a warm paper aesthetic, featuring natural wood textures and soft white fabrics. The lighting is diffused, creating a calm and inviting atmosphere typical of a high-end architectural journal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2Ns8bOnOc1mnxm5jibkr3OG6fAy9RKiuJWYzzV5bimj497HI-S218Q-W3j_Ch-eDJcu0deytjoQdVP95t9zbRb9dRC0BWyGL__YcxYJD3z4sje0HMh3wj7xj1H5T_4_EN8eG7lBYuyzPVPGz7HcK0QmfrNexDzQ9fxs5elE3xC0XrgREC_O2bIy4k7k1fXh_twnrap6ntll9wAYddc5-fLvpHtvYoMlF9XqE5s7blYP8MmtY3Rm6beA">
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur px-xs py-[2px] rounded-DEFAULT border border-on-surface/10">
+<span class="font-label-caps text-label-caps text-primary uppercase">88% Match</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm text-on-background">Raheja Residency</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+</div>
+<p class="font-code-sm text-code-sm text-on-background bg-surface-container px-xs py-[2px] inline-block rounded-DEFAULT mb-sm">
+                                        ₹28,500 / mo
+                                    </p>
+<div class="flex items-center space-x-md text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center space-x-xs"><span class="material-symbols-outlined text-[18px]">bed</span><span class="">2BHK</span></span>
+<span class="flex items-center space-x-xs"><span class="material-symbols-outlined text-[18px]">park</span><span class="">Quiet Street</span></span>
+</div>
+</div>
+<div class="mt-md pt-sm border-t border-on-surface/10">
+<p class="font-body-md text-body-md text-muted italic line-clamp-2">"Known for its robust build quality, this property sits away from the main arterial roads, ensuring a peaceful living environment."</p>
+</div>
+</div>
+</div>
+</article>
+<!-- Listing 3 -->
+<article class="bg-surface rounded-lg structural-border p-sm md:p-md hover:active-border transition-colors cursor-pointer group">
+<div class="flex flex-col md:flex-row gap-md">
+<div class="w-full md:w-1/3 aspect-[4/3] rounded-DEFAULT overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A lifestyle image showing a modern apartment balcony with potted plants and a small seating area. The view overlooks a calm, leafy neighborhood. The color palette emphasizes muted greens, earthy terracotta, and clean whites, aligning with a sophisticated, humanist minimalist design philosophy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxH66C1z5YqNbPczERn4g4L12hIWHXpc_b5Jy4828nhPFUQd1SUEzTQiJsrdLOpZjgf1L1edysBiEJ7BvOVpFY8ZDESKTdj-VfiodF-wZ458QmS9wwHefTGTkzAnErfE1bM-LUedgUx0Z2zDVNmSypIuv5cV90tgctwe0e6Sms2ma9T0zoyBc3xKc4ttCGYzSeAK6ZK1rgjPI3djRFHoeugdU7nFlTMKI5EvkkJhAkdJLXctxMik7e7A">
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur px-xs py-[2px] rounded-DEFAULT border border-on-surface/10">
+<span class="font-label-caps text-label-caps text-primary uppercase">82% Match</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm text-on-background">Sobha Garnet</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+</div>
+<p class="font-code-sm text-code-sm text-on-background bg-surface-container px-xs py-[2px] inline-block rounded-DEFAULT mb-sm">
+                                        ₹35,000 / mo
+                                    </p>
+<div class="flex items-center space-x-md text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center space-x-xs"><span class="material-symbols-outlined text-[18px]">bed</span><span class="">2BHK</span></span>
+<span class="flex items-center space-x-xs"><span class="material-symbols-outlined text-[18px]">pets</span><span class="">Pet Friendly</span></span>
+</div>
+</div>
+<div class="mt-md pt-sm border-t border-on-surface/10">
+<p class="font-body-md text-body-md text-muted italic line-clamp-2">"A premium development featuring dedicated pet trails and higher ceiling clearances, maximizing natural light penetration."</p>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Preferences Panel (Side) -->
+<aside class="w-full lg:w-80 flex-shrink-0">
+<div class="bg-surface rounded-lg structural-border p-md sticky top-md"><div class="p-md border-b border-on-surface/10 sticky top-0 bg-surface/90 backdrop-blur-sm z-10">
+    <h2 class="font-headline-sm text-headline-sm text-on-background flex items-center gap-xs">
+        <span class="material-symbols-outlined text-primary">tune</span>
+        Preferences
+    </h2>
+</div>
+<div class="p-md flex flex-col gap-md">
+    <!-- Preference Item: Locality -->
+    <div class="bg-surface border border-on-surface/10 rounded p-sm flex items-start gap-sm">
+        <div class="w-8 h-8 rounded bg-secondary-container text-primary flex items-center justify-center shrink-0 mt-1">
+            <span class="material-symbols-outlined text-[18px]">location_on</span>
+        </div>
+        <div>
+            <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Locality</p>
+            <p class="font-body-md text-body-md text-on-background font-medium">Koramangala</p>
+        </div>
+    </div>
+    <!-- Preference Item: Bedrooms -->
+    <div class="bg-surface border border-on-surface/10 rounded p-sm flex items-start gap-sm">
+        <div class="w-8 h-8 rounded bg-secondary-container text-primary flex items-center justify-center shrink-0 mt-1">
+            <span class="material-symbols-outlined text-[18px]">bed</span>
+        </div>
+        <div>
+            <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Bedrooms</p>
+            <p class="font-body-md text-body-md text-on-background font-medium">2BHK</p>
+        </div>
+    </div>
+    <!-- Preference Item: Rent -->
+    <div class="bg-surface border border-on-surface/10 rounded p-sm flex items-start gap-sm">
+        <div class="w-8 h-8 rounded bg-secondary-container text-primary flex items-center justify-center shrink-0 mt-1">
+            <span class="material-symbols-outlined text-[18px]">payments</span>
+        </div>
+        <div>
+            <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Max Rent</p>
+            <p class="font-body-md text-body-md text-on-background font-medium">₹35,000</p>
+        </div>
+    </div>
+    <!-- AI Insight Box -->
+    <div class="mt-lg pt-md border-t border-on-surface/10">
+        <div class="bg-assistant-bubble p-sm rounded-DEFAULT structural-border">
+            <p class="font-body-md text-body-md text-on-background text-sm">
+                "I've filtered out properties on the main 80ft road to prioritize the quiet streets you mentioned earlier."
+            </p>
+        </div>
+    </div>
+</div></div>
+</aside>
+</main>
+<!-- Conversational Input Bar -->
+<div class="absolute bottom-0 left-0 right-0 p-md bg-gradient-to-t from-background via-background to-transparent pointer-events-none">
+<div class="max-w-3xl mx-auto w-full pointer-events-auto">
+<div class="bg-surface rounded-full structural-border p-xs flex items-center shadow-sm backdrop-blur-sm">
+<input class="flex-1 bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-background px-sm placeholder:text-on-surface-variant" placeholder="Refine search... e.g., 'Only show places with a gym'" type="text">
+<button class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center hover:opacity-90 transition-opacity flex-shrink-0 relative">
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+<div class="text-center mt-xs">
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Tap mic to speak</p>
+</div>
+</div>
+</div>
+</div>
+
+
+</body></html>

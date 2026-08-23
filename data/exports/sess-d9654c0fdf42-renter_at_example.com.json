@@ -1,0 +1,973 @@
+{
+  "session_id": "sess-d9654c0fdf42",
+  "recipient_email": "renter@example.com",
+  "constraints": {
+    "hard": {
+      "bedrooms": 2,
+      "locality": "Koramangala",
+      "max_rent": 35000,
+      "must_have_amenities": [
+        "parking"
+      ]
+    },
+    "soft": {
+      "near_metro": true,
+      "pet_friendly": null,
+      "balcony": null
+    },
+    "commute_point": null
+  },
+  "shortlist": [
+    {
+      "listing": {
+        "listing_id": "blr-km-202",
+        "source_url": "https://bengaluru.rent/#listing-km-202",
+        "location": "Bengaluru",
+        "locality": "Koramangala",
+        "rent": 28000,
+        "bedrooms": 2,
+        "furnishing": "furnished",
+        "amenities": [
+          "parking",
+          "power-backup"
+        ],
+        "society_name": "5th Block Nest",
+        "square_footage": 980.0,
+        "available_from": "2026-09-01",
+        "deposit_amount": 84000,
+        "listing_type": "whole flat",
+        "food_preference": "non-veg",
+        "smoking_preference": "any",
+        "gender": null,
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+          "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+          "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+          "sources": [
+            {
+              "title": "Koramangala \u2014 Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Koramangala",
+              "snippet": "Neighbourhood in south-eastern Bengaluru known for residential and commercial mix."
+            }
+          ]
+        },
+        "availability_status": "available",
+        "latitude": 12.9345,
+        "longitude": 77.621
+      },
+      "rank": {
+        "listing_id": "blr-km-202",
+        "score": 86.9,
+        "matched": [
+          "within budget",
+          "2BHK",
+          "location match",
+          "parking",
+          "near transit",
+          "available"
+        ],
+        "missing": [],
+        "excluded": false,
+        "exclusion_reasons": [],
+        "reason": "5th Block Nest is a 2BHK (980 sq ft, furnished) at \u20b928,000/mo in Koramangala. Listing amenities: parking, power-backup. Deposit \u20b984,000; available from 2026-09-01. Matched your criteria: within budget, 2BHK, location match, parking, near transit, available. Nearest transit: Bus Stop 202 (~188m)."
+      },
+      "citations": [
+        {
+          "id": "koramangala:safety:8762a95a8e68a43d",
+          "title": "Koramangala \u2014 Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Koramangala",
+          "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+          "locality": "Koramangala",
+          "topic": "safety"
+        }
+      ],
+      "osm": {
+        "listing_id": "blr-km-202",
+        "pois": [
+          {
+            "name": "Bus Stop 202",
+            "category": "transit",
+            "lat": 12.935,
+            "lon": 77.6203,
+            "distance_m": 188.0
+          },
+          {
+            "name": "Koramangala Metro",
+            "category": "metro",
+            "lat": 12.9355,
+            "lon": 77.622,
+            "distance_m": 525.0
+          },
+          {
+            "name": "Neighbourhood Park",
+            "category": "park",
+            "lat": 12.9333,
+            "lon": 77.62049999999999,
+            "distance_m": 605.0
+          },
+          {
+            "name": "Corner Store 202",
+            "category": "grocery",
+            "lat": 12.9337,
+            "lon": 77.6216,
+            "distance_m": 660.0
+          }
+        ],
+        "raw_call_id": "static-synthetic-blr-km-202",
+        "empty_reason": null
+      },
+      "neighborhood_notes": [
+        {
+          "topic": "safety",
+          "text": "At 5th Block Nest: verify society security and access. Area: Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening\u2026",
+          "citation_id": "koramangala:safety:8762a95a8e68a43d"
+        },
+        {
+          "topic": "transit",
+          "text": "From this pin: transit Bus Stop 202 (~188m); metro Koramangala Metro (~525m); Nearest transit: Bus Stop 202 (~188m).",
+          "citation_id": "osm"
+        },
+        {
+          "topic": "amenities",
+          "text": "Society/listing: parking, power-backup. whole flat, furnished. Nearby: park Neighbourhood Park (~605m), grocery Corner Store 202 (~660m).",
+          "citation_id": "listing+osm"
+        }
+      ]
+    },
+    {
+      "listing": {
+        "listing_id": "blr-km-207",
+        "source_url": "https://bengaluru.rent/#listing-km-207",
+        "location": "Bengaluru",
+        "locality": "Koramangala",
+        "rent": 29500,
+        "bedrooms": 2,
+        "furnishing": "furnished",
+        "amenities": [
+          "parking",
+          "security"
+        ],
+        "society_name": "Koramangala Clubside",
+        "square_footage": 990.0,
+        "available_from": "2026-09-05",
+        "deposit_amount": 59000,
+        "listing_type": "whole flat",
+        "food_preference": "veg",
+        "smoking_preference": "any",
+        "gender": null,
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+          "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+          "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+          "sources": [
+            {
+              "title": "Koramangala \u2014 Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Koramangala",
+              "snippet": "Neighbourhood in south-eastern Bengaluru known for residential and commercial mix."
+            }
+          ]
+        },
+        "availability_status": "available",
+        "latitude": 12.9372,
+        "longitude": 77.6261
+      },
+      "rank": {
+        "listing_id": "blr-km-207",
+        "score": 86.6,
+        "matched": [
+          "within budget",
+          "2BHK",
+          "location match",
+          "parking",
+          "near transit",
+          "available"
+        ],
+        "missing": [],
+        "excluded": false,
+        "exclusion_reasons": [],
+        "reason": "Koramangala Clubside is a 2BHK (990 sq ft, furnished) at \u20b929,500/mo in Koramangala. Listing amenities: parking, security. Deposit \u20b959,000; available from 2026-09-05. Matched your criteria: within budget, 2BHK, location match, parking, near transit, available. Nearest transit: Bus Stop 207 (~158m)."
+      },
+      "citations": [
+        {
+          "id": "koramangala:safety:8762a95a8e68a43d",
+          "title": "Koramangala \u2014 Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Koramangala",
+          "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+          "locality": "Koramangala",
+          "topic": "safety"
+        }
+      ],
+      "osm": {
+        "listing_id": "blr-km-207",
+        "pois": [
+          {
+            "name": "Bus Stop 207",
+            "category": "transit",
+            "lat": 12.937700000000001,
+            "lon": 77.6254,
+            "distance_m": 158.0
+          },
+          {
+            "name": "Corner Store 207",
+            "category": "grocery",
+            "lat": 12.9364,
+            "lon": 77.6267,
+            "distance_m": 185.0
+          },
+          {
+            "name": "Neighbourhood Park",
+            "category": "park",
+            "lat": 12.936,
+            "lon": 77.62559999999999,
+            "distance_m": 534.0
+          },
+          {
+            "name": "Koramangala Metro",
+            "category": "metro",
+            "lat": 12.9382,
+            "lon": 77.6271,
+            "distance_m": 613.0
+          }
+        ],
+        "raw_call_id": "static-synthetic-blr-km-207",
+        "empty_reason": null
+      },
+      "neighborhood_notes": [
+        {
+          "topic": "safety",
+          "text": "At Koramangala Clubside: verify society security and access. Area: Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening\u2026",
+          "citation_id": "koramangala:safety:8762a95a8e68a43d"
+        },
+        {
+          "topic": "transit",
+          "text": "From this pin: transit Bus Stop 207 (~158m); metro Koramangala Metro (~613m); Nearest transit: Bus Stop 207 (~158m).",
+          "citation_id": "osm"
+        },
+        {
+          "topic": "amenities",
+          "text": "Society/listing: parking, security. whole flat, furnished. Nearby: grocery Corner Store 207 (~185m), park Neighbourhood Park (~534m).",
+          "citation_id": "listing+osm"
+        }
+      ]
+    },
+    {
+      "listing": {
+        "listing_id": "blr-km-206",
+        "source_url": "https://bengaluru.rent/#listing-km-206",
+        "location": "Bengaluru",
+        "locality": "Koramangala",
+        "rent": 31000,
+        "bedrooms": 2,
+        "furnishing": "semi-furnished",
+        "amenities": [
+          "parking",
+          "balcony",
+          "elevator"
+        ],
+        "society_name": "St John's Road Court",
+        "square_footage": 1020.0,
+        "available_from": "2026-08-28",
+        "deposit_amount": 93000,
+        "listing_type": "whole flat",
+        "food_preference": "non-veg",
+        "smoking_preference": "no smoking",
+        "gender": null,
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+          "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+          "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+          "sources": [
+            {
+              "title": "Koramangala \u2014 Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Koramangala",
+              "snippet": "Neighbourhood in south-eastern Bengaluru known for residential and commercial mix."
+            }
+          ]
+        },
+        "availability_status": "available",
+        "latitude": 12.9338,
+        "longitude": 77.6195
+      },
+      "rank": {
+        "listing_id": "blr-km-206",
+        "score": 86.3,
+        "matched": [
+          "within budget",
+          "2BHK",
+          "location match",
+          "parking",
+          "near transit",
+          "available"
+        ],
+        "missing": [],
+        "excluded": false,
+        "exclusion_reasons": [],
+        "reason": "St John's Road Court is a 2BHK (1020 sq ft, semi-furnished) at \u20b931,000/mo in Koramangala. Listing amenities: parking, balcony, elevator. Deposit \u20b993,000; available from 2026-08-28. Matched your criteria: within budget, 2BHK, location match, parking, near transit, available. Nearest transit: Bus Stop 206 (~254m)."
+      },
+      "citations": [
+        {
+          "id": "koramangala:safety:8762a95a8e68a43d",
+          "title": "Koramangala \u2014 Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Koramangala",
+          "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+          "locality": "Koramangala",
+          "topic": "safety"
+        }
+      ],
+      "osm": {
+        "listing_id": "blr-km-206",
+        "pois": [
+          {
+            "name": "Bus Stop 206",
+            "category": "transit",
+            "lat": 12.9343,
+            "lon": 77.61880000000001,
+            "distance_m": 254.0
+          },
+          {
+            "name": "Neighbourhood Park",
+            "category": "park",
+            "lat": 12.932599999999999,
+            "lon": 77.619,
+            "distance_m": 403.0
+          },
+          {
+            "name": "Koramangala Metro",
+            "category": "metro",
+            "lat": 12.9348,
+            "lon": 77.6205,
+            "distance_m": 457.0
+          },
+          {
+            "name": "Corner Store 206",
+            "category": "grocery",
+            "lat": 12.933,
+            "lon": 77.62010000000001,
+            "distance_m": 622.0
+          }
+        ],
+        "raw_call_id": "static-synthetic-blr-km-206",
+        "empty_reason": null
+      },
+      "neighborhood_notes": [
+        {
+          "topic": "safety",
+          "text": "At St John's Road Court: verify society security and access. Area: Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening\u2026",
+          "citation_id": "koramangala:safety:8762a95a8e68a43d"
+        },
+        {
+          "topic": "transit",
+          "text": "From this pin: transit Bus Stop 206 (~254m); metro Koramangala Metro (~457m); Nearest transit: Bus Stop 206 (~254m).",
+          "citation_id": "osm"
+        },
+        {
+          "topic": "amenities",
+          "text": "Society/listing: parking, balcony, elevator. whole flat, semi-furnished. Nearby: park Neighbourhood Park (~403m), grocery Corner Store 206 (~622m).",
+          "citation_id": "listing+osm"
+        }
+      ]
+    },
+    {
+      "listing": {
+        "listing_id": "blr-km-201",
+        "source_url": "https://bengaluru.rent/#listing-km-201",
+        "location": "Bengaluru",
+        "locality": "Koramangala",
+        "rent": 32000,
+        "bedrooms": 2,
+        "furnishing": "semi-furnished",
+        "amenities": [
+          "parking",
+          "balcony",
+          "security"
+        ],
+        "society_name": "Sony Signal Residency",
+        "square_footage": 1050.0,
+        "available_from": "2026-08-25",
+        "deposit_amount": 64000,
+        "listing_type": "whole flat",
+        "food_preference": "veg",
+        "smoking_preference": "no smoking",
+        "gender": null,
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+          "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+          "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+          "sources": [
+            {
+              "title": "Koramangala \u2014 Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Koramangala",
+              "snippet": "Neighbourhood in south-eastern Bengaluru known for residential and commercial mix."
+            }
+          ]
+        },
+        "availability_status": "available",
+        "latitude": 12.9352,
+        "longitude": 77.6245
+      },
+      "rank": {
+        "listing_id": "blr-km-201",
+        "score": 86.1,
+        "matched": [
+          "within budget",
+          "2BHK",
+          "location match",
+          "parking",
+          "near transit",
+          "available"
+        ],
+        "missing": [],
+        "excluded": false,
+        "exclusion_reasons": [],
+        "reason": "Sony Signal Residency is a 2BHK (1050 sq ft, semi-furnished) at \u20b932,000/mo in Koramangala. Listing amenities: parking, balcony, security. Deposit \u20b964,000; available from 2026-08-25. Matched your criteria: within budget, 2BHK, location match, parking, near transit, available. Nearest metro: Koramangala Metro (~166m)."
+      },
+      "citations": [
+        {
+          "id": "koramangala:safety:8762a95a8e68a43d",
+          "title": "Koramangala \u2014 Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Koramangala",
+          "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+          "locality": "Koramangala",
+          "topic": "safety"
+        }
+      ],
+      "osm": {
+        "listing_id": "blr-km-201",
+        "pois": [
+          {
+            "name": "Koramangala Metro",
+            "category": "metro",
+            "lat": 12.9362,
+            "lon": 77.6255,
+            "distance_m": 166.0
+          },
+          {
+            "name": "Neighbourhood Park",
+            "category": "park",
+            "lat": 12.934,
+            "lon": 77.624,
+            "distance_m": 305.0
+          },
+          {
+            "name": "Bus Stop 201",
+            "category": "transit",
+            "lat": 12.9357,
+            "lon": 77.6238,
+            "distance_m": 343.0
+          },
+          {
+            "name": "Corner Store 201",
+            "category": "grocery",
+            "lat": 12.9344,
+            "lon": 77.6251,
+            "distance_m": 397.0
+          }
+        ],
+        "raw_call_id": "static-synthetic-blr-km-201",
+        "empty_reason": null
+      },
+      "neighborhood_notes": [
+        {
+          "topic": "safety",
+          "text": "At Sony Signal Residency: verify society security and access. Area: Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening\u2026",
+          "citation_id": "koramangala:safety:8762a95a8e68a43d"
+        },
+        {
+          "topic": "transit",
+          "text": "From this pin: metro Koramangala Metro (~166m); transit Bus Stop 201 (~343m); Nearest metro: Koramangala Metro (~166m).",
+          "citation_id": "osm"
+        },
+        {
+          "topic": "amenities",
+          "text": "Society/listing: parking, balcony, security. whole flat, semi-furnished. Nearby: park Neighbourhood Park (~305m), grocery Corner Store 201 (~397m).",
+          "citation_id": "listing+osm"
+        }
+      ]
+    },
+    {
+      "listing": {
+        "listing_id": "blr-km-208",
+        "source_url": "https://bengaluru.rent/#listing-km-208",
+        "location": "Bengaluru",
+        "locality": "Koramangala",
+        "rent": 34500,
+        "bedrooms": 2,
+        "furnishing": "semi-furnished",
+        "amenities": [
+          "parking",
+          "balcony",
+          "pet-friendly"
+        ],
+        "society_name": "6th Block Oaks",
+        "square_footage": 1120.0,
+        "available_from": "2026-09-10",
+        "deposit_amount": 103500,
+        "listing_type": "whole flat",
+        "food_preference": "any",
+        "smoking_preference": "no smoking",
+        "gender": null,
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+          "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+          "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+          "sources": [
+            {
+              "title": "Koramangala \u2014 Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Koramangala",
+              "snippet": "Neighbourhood in south-eastern Bengaluru known for residential and commercial mix."
+            }
+          ]
+        },
+        "availability_status": "available",
+        "latitude": 12.9325,
+        "longitude": 77.6235
+      },
+      "rank": {
+        "listing_id": "blr-km-208",
+        "score": 85.6,
+        "matched": [
+          "within budget",
+          "2BHK",
+          "location match",
+          "parking",
+          "near transit",
+          "available"
+        ],
+        "missing": [],
+        "excluded": false,
+        "exclusion_reasons": [],
+        "reason": "6th Block Oaks is a 2BHK (1120 sq ft, semi-furnished) at \u20b934,500/mo in Koramangala. Listing amenities: parking, balcony, pet-friendly. Deposit \u20b9103,500; available from 2026-09-10. Matched your criteria: within budget, 2BHK, location match, parking, near transit, available. Nearest metro: Koramangala Metro (~274m)."
+      },
+      "citations": [
+        {
+          "id": "koramangala:safety:8762a95a8e68a43d",
+          "title": "Koramangala \u2014 Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Koramangala",
+          "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+          "locality": "Koramangala",
+          "topic": "safety"
+        }
+      ],
+      "osm": {
+        "listing_id": "blr-km-208",
+        "pois": [
+          {
+            "name": "Corner Store 208",
+            "category": "grocery",
+            "lat": 12.9317,
+            "lon": 77.62410000000001,
+            "distance_m": 267.0
+          },
+          {
+            "name": "Neighbourhood Park",
+            "category": "park",
+            "lat": 12.931299999999998,
+            "lon": 77.623,
+            "distance_m": 273.0
+          },
+          {
+            "name": "Koramangala Metro",
+            "category": "metro",
+            "lat": 12.933499999999999,
+            "lon": 77.62450000000001,
+            "distance_m": 274.0
+          },
+          {
+            "name": "Bus Stop 208",
+            "category": "transit",
+            "lat": 12.933,
+            "lon": 77.62280000000001,
+            "distance_m": 369.0
+          }
+        ],
+        "raw_call_id": "static-synthetic-blr-km-208",
+        "empty_reason": null
+      },
+      "neighborhood_notes": [
+        {
+          "topic": "safety",
+          "text": "At 6th Block Oaks: verify society security and access. Area: Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening\u2026",
+          "citation_id": "koramangala:safety:8762a95a8e68a43d"
+        },
+        {
+          "topic": "transit",
+          "text": "From this pin: metro Koramangala Metro (~274m); transit Bus Stop 208 (~369m); Nearest metro: Koramangala Metro (~274m).",
+          "citation_id": "osm"
+        },
+        {
+          "topic": "amenities",
+          "text": "Society/listing: parking, balcony, pet-friendly. whole flat, semi-furnished. Nearby: grocery Corner Store 208 (~267m), park Neighbourhood Park (~273m).",
+          "citation_id": "listing+osm"
+        }
+      ]
+    }
+  ],
+  "citations": [
+    {
+      "id": "koramangala:safety:8762a95a8e68a43d",
+      "title": "Koramangala \u2014 Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Koramangala",
+      "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+      "locality": "Koramangala",
+      "topic": "safety"
+    }
+  ],
+  "booking": {
+    "listing_id": "blr-km-202",
+    "date": "2026-08-22",
+    "slot": "16:00",
+    "status": "confirmed",
+    "confirmation_code": "98N1K2"
+  },
+  "selected_listing_id": "blr-km-202",
+  "export_view": {
+    "preferences_summary": {
+      "hard": {
+        "bedrooms": 2,
+        "locality": "Koramangala",
+        "max_rent": 35000,
+        "must_have_amenities": [
+          "parking"
+        ]
+      },
+      "soft": {
+        "near_metro": true,
+        "pet_friendly": null,
+        "balcony": null
+      },
+      "commute_point": null
+    },
+    "properties": [
+      {
+        "listing_id": "blr-km-202",
+        "society_name": "5th Block Nest",
+        "locality": "Koramangala",
+        "rent": 28000,
+        "bedrooms": 2,
+        "amenities": [
+          "parking",
+          "power-backup"
+        ],
+        "match_score": 86.9,
+        "match_reason": "5th Block Nest is a 2BHK (980 sq ft, furnished) at \u20b928,000/mo in Koramangala. Listing amenities: parking, power-backup. Deposit \u20b984,000; available from 2026-09-01. Matched your criteria: within budget, 2BHK, location match, parking, near transit, available. Nearest transit: Bus Stop 202 (~188m).",
+        "matched": [
+          "within budget",
+          "2BHK",
+          "location match",
+          "parking",
+          "near transit",
+          "available"
+        ],
+        "neighborhood_notes": [
+          {
+            "topic": "safety",
+            "text": "At 5th Block Nest: verify society security and access. Area: Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening\u2026",
+            "citation_id": "koramangala:safety:8762a95a8e68a43d"
+          },
+          {
+            "topic": "transit",
+            "text": "From this pin: transit Bus Stop 202 (~188m); metro Koramangala Metro (~525m); Nearest transit: Bus Stop 202 (~188m).",
+            "citation_id": "osm"
+          },
+          {
+            "topic": "amenities",
+            "text": "Society/listing: parking, power-backup. whole flat, furnished. Nearby: park Neighbourhood Park (~605m), grocery Corner Store 202 (~660m).",
+            "citation_id": "listing+osm"
+          }
+        ],
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+          "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+          "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+          "sources": [
+            {
+              "title": "Koramangala \u2014 Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Koramangala",
+              "snippet": "Neighbourhood in south-eastern Bengaluru known for residential and commercial mix."
+            }
+          ]
+        },
+        "citations": [
+          {
+            "id": "koramangala:safety:8762a95a8e68a43d",
+            "title": "Koramangala \u2014 Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Koramangala",
+            "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+            "locality": "Koramangala",
+            "topic": "safety"
+          }
+        ]
+      },
+      {
+        "listing_id": "blr-km-207",
+        "society_name": "Koramangala Clubside",
+        "locality": "Koramangala",
+        "rent": 29500,
+        "bedrooms": 2,
+        "amenities": [
+          "parking",
+          "security"
+        ],
+        "match_score": 86.6,
+        "match_reason": "Koramangala Clubside is a 2BHK (990 sq ft, furnished) at \u20b929,500/mo in Koramangala. Listing amenities: parking, security. Deposit \u20b959,000; available from 2026-09-05. Matched your criteria: within budget, 2BHK, location match, parking, near transit, available. Nearest transit: Bus Stop 207 (~158m).",
+        "matched": [
+          "within budget",
+          "2BHK",
+          "location match",
+          "parking",
+          "near transit",
+          "available"
+        ],
+        "neighborhood_notes": [
+          {
+            "topic": "safety",
+            "text": "At Koramangala Clubside: verify society security and access. Area: Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening\u2026",
+            "citation_id": "koramangala:safety:8762a95a8e68a43d"
+          },
+          {
+            "topic": "transit",
+            "text": "From this pin: transit Bus Stop 207 (~158m); metro Koramangala Metro (~613m); Nearest transit: Bus Stop 207 (~158m).",
+            "citation_id": "osm"
+          },
+          {
+            "topic": "amenities",
+            "text": "Society/listing: parking, security. whole flat, furnished. Nearby: grocery Corner Store 207 (~185m), park Neighbourhood Park (~534m).",
+            "citation_id": "listing+osm"
+          }
+        ],
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+          "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+          "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+          "sources": [
+            {
+              "title": "Koramangala \u2014 Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Koramangala",
+              "snippet": "Neighbourhood in south-eastern Bengaluru known for residential and commercial mix."
+            }
+          ]
+        },
+        "citations": [
+          {
+            "id": "koramangala:safety:8762a95a8e68a43d",
+            "title": "Koramangala \u2014 Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Koramangala",
+            "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+            "locality": "Koramangala",
+            "topic": "safety"
+          }
+        ]
+      },
+      {
+        "listing_id": "blr-km-206",
+        "society_name": "St John's Road Court",
+        "locality": "Koramangala",
+        "rent": 31000,
+        "bedrooms": 2,
+        "amenities": [
+          "parking",
+          "balcony",
+          "elevator"
+        ],
+        "match_score": 86.3,
+        "match_reason": "St John's Road Court is a 2BHK (1020 sq ft, semi-furnished) at \u20b931,000/mo in Koramangala. Listing amenities: parking, balcony, elevator. Deposit \u20b993,000; available from 2026-08-28. Matched your criteria: within budget, 2BHK, location match, parking, near transit, available. Nearest transit: Bus Stop 206 (~254m).",
+        "matched": [
+          "within budget",
+          "2BHK",
+          "location match",
+          "parking",
+          "near transit",
+          "available"
+        ],
+        "neighborhood_notes": [
+          {
+            "topic": "safety",
+            "text": "At St John's Road Court: verify society security and access. Area: Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening\u2026",
+            "citation_id": "koramangala:safety:8762a95a8e68a43d"
+          },
+          {
+            "topic": "transit",
+            "text": "From this pin: transit Bus Stop 206 (~254m); metro Koramangala Metro (~457m); Nearest transit: Bus Stop 206 (~254m).",
+            "citation_id": "osm"
+          },
+          {
+            "topic": "amenities",
+            "text": "Society/listing: parking, balcony, elevator. whole flat, semi-furnished. Nearby: park Neighbourhood Park (~403m), grocery Corner Store 206 (~622m).",
+            "citation_id": "listing+osm"
+          }
+        ],
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+          "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+          "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+          "sources": [
+            {
+              "title": "Koramangala \u2014 Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Koramangala",
+              "snippet": "Neighbourhood in south-eastern Bengaluru known for residential and commercial mix."
+            }
+          ]
+        },
+        "citations": [
+          {
+            "id": "koramangala:safety:8762a95a8e68a43d",
+            "title": "Koramangala \u2014 Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Koramangala",
+            "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+            "locality": "Koramangala",
+            "topic": "safety"
+          }
+        ]
+      },
+      {
+        "listing_id": "blr-km-201",
+        "society_name": "Sony Signal Residency",
+        "locality": "Koramangala",
+        "rent": 32000,
+        "bedrooms": 2,
+        "amenities": [
+          "parking",
+          "balcony",
+          "security"
+        ],
+        "match_score": 86.1,
+        "match_reason": "Sony Signal Residency is a 2BHK (1050 sq ft, semi-furnished) at \u20b932,000/mo in Koramangala. Listing amenities: parking, balcony, security. Deposit \u20b964,000; available from 2026-08-25. Matched your criteria: within budget, 2BHK, location match, parking, near transit, available. Nearest metro: Koramangala Metro (~166m).",
+        "matched": [
+          "within budget",
+          "2BHK",
+          "location match",
+          "parking",
+          "near transit",
+          "available"
+        ],
+        "neighborhood_notes": [
+          {
+            "topic": "safety",
+            "text": "At Sony Signal Residency: verify society security and access. Area: Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening\u2026",
+            "citation_id": "koramangala:safety:8762a95a8e68a43d"
+          },
+          {
+            "topic": "transit",
+            "text": "From this pin: metro Koramangala Metro (~166m); transit Bus Stop 201 (~343m); Nearest metro: Koramangala Metro (~166m).",
+            "citation_id": "osm"
+          },
+          {
+            "topic": "amenities",
+            "text": "Society/listing: parking, balcony, security. whole flat, semi-furnished. Nearby: park Neighbourhood Park (~305m), grocery Corner Store 201 (~397m).",
+            "citation_id": "listing+osm"
+          }
+        ],
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+          "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+          "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+          "sources": [
+            {
+              "title": "Koramangala \u2014 Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Koramangala",
+              "snippet": "Neighbourhood in south-eastern Bengaluru known for residential and commercial mix."
+            }
+          ]
+        },
+        "citations": [
+          {
+            "id": "koramangala:safety:8762a95a8e68a43d",
+            "title": "Koramangala \u2014 Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Koramangala",
+            "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+            "locality": "Koramangala",
+            "topic": "safety"
+          }
+        ]
+      },
+      {
+        "listing_id": "blr-km-208",
+        "society_name": "6th Block Oaks",
+        "locality": "Koramangala",
+        "rent": 34500,
+        "bedrooms": 2,
+        "amenities": [
+          "parking",
+          "balcony",
+          "pet-friendly"
+        ],
+        "match_score": 85.6,
+        "match_reason": "6th Block Oaks is a 2BHK (1120 sq ft, semi-furnished) at \u20b934,500/mo in Koramangala. Listing amenities: parking, balcony, pet-friendly. Deposit \u20b9103,500; available from 2026-09-10. Matched your criteria: within budget, 2BHK, location match, parking, near transit, available. Nearest metro: Koramangala Metro (~274m).",
+        "matched": [
+          "within budget",
+          "2BHK",
+          "location match",
+          "parking",
+          "near transit",
+          "available"
+        ],
+        "neighborhood_notes": [
+          {
+            "topic": "safety",
+            "text": "At 6th Block Oaks: verify society security and access. Area: Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening\u2026",
+            "citation_id": "koramangala:safety:8762a95a8e68a43d"
+          },
+          {
+            "topic": "transit",
+            "text": "From this pin: metro Koramangala Metro (~274m); transit Bus Stop 208 (~369m); Nearest metro: Koramangala Metro (~274m).",
+            "citation_id": "osm"
+          },
+          {
+            "topic": "amenities",
+            "text": "Society/listing: parking, balcony, pet-friendly. whole flat, semi-furnished. Nearby: grocery Corner Store 208 (~267m), park Neighbourhood Park (~273m).",
+            "citation_id": "listing+osm"
+          }
+        ],
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+          "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+          "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+          "sources": [
+            {
+              "title": "Koramangala \u2014 Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Koramangala",
+              "snippet": "Neighbourhood in south-eastern Bengaluru known for residential and commercial mix."
+            }
+          ]
+        },
+        "citations": [
+          {
+            "id": "koramangala:safety:8762a95a8e68a43d",
+            "title": "Koramangala \u2014 Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Koramangala",
+            "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+            "locality": "Koramangala",
+            "topic": "safety"
+          }
+        ]
+      }
+    ],
+    "session_citations": [
+      {
+        "id": "koramangala:safety:8762a95a8e68a43d",
+        "title": "Koramangala \u2014 Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Koramangala",
+        "snippet": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for yo",
+        "locality": "Koramangala",
+        "topic": "safety"
+      }
+    ],
+    "visit": {
+      "listing_id": "blr-km-202",
+      "date": "2026-08-22",
+      "slot": "16:00",
+      "status": "confirmed",
+      "confirmation_code": "98N1K2"
+    }
+  }
+}

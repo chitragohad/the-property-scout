@@ -1,0 +1,80 @@
+{
+  "name": "Property Scout — Shortlist PDF Email",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "property-scout-shortlist",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-property-scout",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [220, 300],
+      "webhookId": "property-scout-shortlist"
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $json.body || $json;\nconst props = body.export_view?.properties || [];\nconst citations = body.citations || body.export_view?.session_citations || [];\nconst booking = body.booking || body.export_view?.visit;\nconst hard = body.constraints?.hard || {};\n\nconst propertyHtml = props.map((p) => {\n  const notes = (p.neighborhood_notes || [])\n    .map((n) => `<li><strong>${n.topic}:</strong> ${n.text}</li>`)\n    .join('');\n  return `\n  <section style=\"margin:0 0 24px;padding:16px;border:1px solid #d7e3d4;border-radius:8px;background:#f7faf6\">\n    <h3 style=\"margin:0 0 8px;color:#1b4332\">${p.society_name}</h3>\n    <p style=\"margin:0 0 8px\">₹${Number(p.rent).toLocaleString('en-IN')} · ${p.bedrooms} BHK · ${p.locality}</p>\n    <p style=\"margin:0 0 8px\"><strong>Why:</strong> ${p.match_reason || ''}</p>\n    <p style=\"margin:0 0 8px\"><strong>Amenities:</strong> ${(p.amenities || []).join(', ')}</p>\n    ${notes ? `<ul style=\"margin:8px 0 0;padding-left:18px\">${notes}</ul>` : ''}\n  </section>`;\n}).join('');\n\nconst citationHtml = citations\n  .map((c) => `<li><a href=\"${c.url}\">${c.title}</a></li>`)\n  .join('');\n\nconst prefs = [\n  hard.bedrooms ? `${hard.bedrooms} BHK` : null,\n  hard.locality || null,\n  hard.max_rent ? `≤ ₹${Number(hard.max_rent).toLocaleString('en-IN')}` : null,\n  (hard.must_have_amenities || []).join(', ') || null,\n].filter(Boolean).join(' · ');\n\nconst visitHtml = booking\n  ? `<h2>Site visit</h2><p>${booking.date || ''} at ${booking.slot || ''} · Code ${booking.confirmation_code || 'pending'}</p>`\n  : '';\n\nconst html = `<!DOCTYPE html>\n<html><head><meta charset=\"utf-8\"><title>Property Scout Shortlist</title></head>\n<body style=\"font-family:Georgia,serif;color:#1a1a1a;max-width:720px;margin:24px auto;padding:0 16px\">\n  <h1 style=\"color:#1b4332\">Property Scout Shortlist</h1>\n  <p><strong>Recipient:</strong> ${body.recipient_email}</p>\n  <h2>Preferences</h2>\n  <p>${prefs || 'See attached session constraints.'}</p>\n  <h2>Shortlisted properties</h2>\n  ${propertyHtml || '<p>No properties in payload.</p>'}\n  <h2>Sources</h2>\n  <ul>${citationHtml || '<li>No citations attached.</li>'}</ul>\n  ${visitHtml}\n</body></html>`;\n\nreturn [{\n  json: {\n    ...body,\n    email_html: html,\n    email_subject: 'Your Property Scout shortlist',\n    email_text: `Your curated Bengaluru shortlist (${props.length} homes) is ready. Open this email in HTML view for full details.`,\n  },\n}];"
+      },
+      "id": "build-email-html",
+      "name": "Build Email HTML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.recipient_email }}",
+        "subject": "={{ $json.email_subject }}",
+        "emailType": "html",
+        "message": "={{ $json.email_html }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "send-email",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ ok: true, delivered: true, recipient: $json.recipient_email }) }}",
+        "options": {}
+      },
+      "id": "respond-ok",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [940, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [[{ "node": "Build Email HTML", "type": "main", "index": 0 }]]
+    },
+    "Build Email HTML": {
+      "main": [[{ "node": "Send Email", "type": "main", "index": 0 }]]
+    },
+    "Send Email": {
+      "main": [[{ "node": "Respond OK", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "description": "Production webhook for Property Scout shortlist email. Path: property-scout-shortlist. Set N8N_WEBHOOK_URL to https://<workspace>.app.n8n.cloud/webhook/property-scout-shortlist and configure SMTP/Gmail credentials on Send Email."
+  },
+  "tags": [
+    {
+      "name": "property-scout"
+    }
+  ]
+}

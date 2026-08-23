@@ -1,0 +1,470 @@
+{
+  "source": "bengaluru.rent (scrubbed/normalized ingest)",
+  "count": 12,
+  "listings": [
+    {
+      "listing_id": "blr-hsr-301",
+      "source_url": "https://bengaluru.rent/#listing-hsr-301",
+      "location": "Bengaluru",
+      "locality": "HSR Layout",
+      "rent": 33000,
+      "bedrooms": 2,
+      "furnishing": "semi-furnished",
+      "amenities": [
+        "parking",
+        "balcony"
+      ],
+      "society_name": "Sector 2 Greens",
+      "square_footage": 1100.0,
+      "available_from": "2026-08-22",
+      "deposit_amount": 66000,
+      "listing_type": "room in a flat",
+      "food_preference": "veg",
+      "smoking_preference": "no smoking",
+      "neighborhood_guidance": {
+        "locality": "HSR Layout",
+        "safety": "Planned sector layout with comparatively organised streets and active residential associations in many blocks. Main roads stay active into the evening; quieter interior lanes vary by sector — prefer well-reviewed societies when possible.",
+        "amenities": "Good density of groceries, pharmacies, cafes, and coworking options especially along 27th Main and Sector 6/7 commercial stretches. Parks and playgrounds are part of the planned layout character.",
+        "transit_character": "Strong bus connectivity and ORR access for IT corridor commuting. Metro coverage is improving via nearby corridors; last-mile often relies on autos/cabs within sectors.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      },
+      "gender": "male"
+    },
+    {
+      "listing_id": "blr-ind-401",
+      "source_url": "https://bengaluru.rent/#listing-ind-401",
+      "location": "Bengaluru",
+      "locality": "Indiranagar",
+      "rent": 38000,
+      "bedrooms": 2,
+      "furnishing": "furnished",
+      "amenities": [
+        "parking",
+        "balcony",
+        "elevator"
+      ],
+      "society_name": "100 Feet Road Towers",
+      "square_footage": 1150.0,
+      "available_from": "2026-09-01",
+      "deposit_amount": 114000,
+      "listing_type": "whole flat",
+      "food_preference": "non-veg",
+      "smoking_preference": "any",
+      "neighborhood_guidance": {
+        "locality": "Indiranagar",
+        "safety": "Popular, high-activity neighbourhood with nightlife and retail corridors that stay busy late. Standard urban precautions apply around crowded 100 Feet Road stretches.",
+        "amenities": "Excellent amenity depth: restaurants, boutiques, groceries, fitness studios, and healthcare options are concentrated around 100 Feet Road and surrounding cross streets.",
+        "transit_character": "Purple Line metro access via Indiranagar / Halasuru catchments plus dense bus and auto availability. Road congestion on 100 Feet Road is a defining commute factor.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      }
+    },
+    {
+      "listing_id": "blr-jyn-601",
+      "source_url": "https://bengaluru.rent/#listing-jyn-601",
+      "location": "Bengaluru",
+      "locality": "Jayanagar",
+      "rent": 27000,
+      "bedrooms": 2,
+      "furnishing": "unfurnished",
+      "amenities": [
+        "parking"
+      ],
+      "society_name": "4th Block Court",
+      "square_footage": 950.0,
+      "available_from": "2026-08-21",
+      "deposit_amount": 81000,
+      "listing_type": "room in a flat",
+      "food_preference": "veg",
+      "smoking_preference": "no smoking",
+      "neighborhood_guidance": {
+        "locality": "Jayanagar",
+        "safety": "Established residential locality with family-oriented streets and active local commerce. Generally considered calm relative to nightlife districts; still confirm building-level security for ground-floor or older walk-ups.",
+        "amenities": "Mature amenity ecosystem: markets, temples, parks (including Cubbon Park proximity trade-offs by block), clinics, and traditional retail around 4th Block and nearby circles.",
+        "transit_character": "Good bus connectivity toward south and central Bengaluru; metro access via nearby Green/Purple catchments depending on exact block. Walkability is a relative strength in core Jayanagar grids.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      },
+      "gender": "any"
+    },
+    {
+      "listing_id": "blr-km-202",
+      "source_url": "https://bengaluru.rent/#listing-km-202",
+      "location": "Bengaluru",
+      "locality": "Koramangala",
+      "rent": 28000,
+      "bedrooms": 2,
+      "furnishing": "furnished",
+      "amenities": [
+        "parking",
+        "power-backup"
+      ],
+      "society_name": "5th Block Nest",
+      "square_footage": 980.0,
+      "available_from": "2026-09-01",
+      "deposit_amount": 84000,
+      "listing_type": "whole flat",
+      "food_preference": "non-veg",
+      "smoking_preference": "any",
+      "neighborhood_guidance": {
+        "locality": "Koramangala",
+        "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+        "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+        "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      }
+    },
+    {
+      "listing_id": "blr-km-207",
+      "source_url": "https://bengaluru.rent/#listing-km-207",
+      "location": "Bengaluru",
+      "locality": "Koramangala",
+      "rent": 29500,
+      "bedrooms": 2,
+      "furnishing": "furnished",
+      "amenities": [
+        "parking",
+        "security"
+      ],
+      "society_name": "Koramangala Clubside",
+      "square_footage": 990.0,
+      "available_from": "2026-09-05",
+      "deposit_amount": 59000,
+      "listing_type": "whole flat",
+      "food_preference": "veg",
+      "smoking_preference": "any",
+      "neighborhood_guidance": {
+        "locality": "Koramangala",
+        "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+        "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+        "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      }
+    },
+    {
+      "listing_id": "blr-km-205",
+      "source_url": "https://bengaluru.rent/#listing-km-205",
+      "location": "Bengaluru",
+      "locality": "Koramangala",
+      "rent": 30000,
+      "bedrooms": 3,
+      "furnishing": "semi-furnished",
+      "amenities": [
+        "parking",
+        "pet-friendly"
+      ],
+      "society_name": "80 Feet Road Homes",
+      "square_footage": 1400.0,
+      "available_from": "2026-10-01",
+      "deposit_amount": 60000,
+      "listing_type": "whole flat",
+      "food_preference": "any",
+      "smoking_preference": "any",
+      "neighborhood_guidance": {
+        "locality": "Koramangala",
+        "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+        "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+        "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      }
+    },
+    {
+      "listing_id": "blr-km-206",
+      "source_url": "https://bengaluru.rent/#listing-km-206",
+      "location": "Bengaluru",
+      "locality": "Koramangala",
+      "rent": 31000,
+      "bedrooms": 2,
+      "furnishing": "semi-furnished",
+      "amenities": [
+        "parking",
+        "balcony",
+        "elevator"
+      ],
+      "society_name": "St John's Road Court",
+      "square_footage": 1020.0,
+      "available_from": "2026-08-28",
+      "deposit_amount": 93000,
+      "listing_type": "whole flat",
+      "food_preference": "non-veg",
+      "smoking_preference": "no smoking",
+      "neighborhood_guidance": {
+        "locality": "Koramangala",
+        "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+        "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+        "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      }
+    },
+    {
+      "listing_id": "blr-km-201",
+      "source_url": "https://bengaluru.rent/#listing-km-201",
+      "location": "Bengaluru",
+      "locality": "Koramangala",
+      "rent": 32000,
+      "bedrooms": 2,
+      "furnishing": "semi-furnished",
+      "amenities": [
+        "parking",
+        "balcony",
+        "security"
+      ],
+      "society_name": "Sony Signal Residency",
+      "square_footage": 1050.0,
+      "available_from": "2026-08-25",
+      "deposit_amount": 64000,
+      "listing_type": "whole flat",
+      "food_preference": "veg",
+      "smoking_preference": "no smoking",
+      "neighborhood_guidance": {
+        "locality": "Koramangala",
+        "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+        "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+        "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      }
+    },
+    {
+      "listing_id": "blr-km-204",
+      "source_url": "https://bengaluru.rent/#listing-km-204",
+      "location": "Bengaluru",
+      "locality": "Koramangala",
+      "rent": 34000,
+      "bedrooms": 2,
+      "furnishing": "unfurnished",
+      "amenities": [
+        "balcony"
+      ],
+      "society_name": "Jyoti Nivas Lane",
+      "square_footage": 900.0,
+      "available_from": "2026-09-15",
+      "deposit_amount": 102000,
+      "listing_type": "room in a flat",
+      "food_preference": "veg",
+      "smoking_preference": "no smoking",
+      "neighborhood_guidance": {
+        "locality": "Koramangala",
+        "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+        "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+        "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      },
+      "gender": "female"
+    },
+    {
+      "listing_id": "blr-km-208",
+      "source_url": "https://bengaluru.rent/#listing-km-208",
+      "location": "Bengaluru",
+      "locality": "Koramangala",
+      "rent": 34500,
+      "bedrooms": 2,
+      "furnishing": "semi-furnished",
+      "amenities": [
+        "parking",
+        "balcony",
+        "pet-friendly"
+      ],
+      "society_name": "6th Block Oaks",
+      "square_footage": 1120.0,
+      "available_from": "2026-09-10",
+      "deposit_amount": 103500,
+      "listing_type": "whole flat",
+      "food_preference": "any",
+      "smoking_preference": "no smoking",
+      "neighborhood_guidance": {
+        "locality": "Koramangala",
+        "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+        "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+        "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      }
+    },
+    {
+      "listing_id": "blr-km-203",
+      "source_url": "https://bengaluru.rent/#listing-km-203",
+      "location": "Bengaluru",
+      "locality": "Koramangala",
+      "rent": 45000,
+      "bedrooms": 2,
+      "furnishing": "furnished",
+      "amenities": [
+        "parking",
+        "balcony",
+        "gym",
+        "pet-friendly"
+      ],
+      "society_name": "Forum View Apartments",
+      "square_footage": 1250.0,
+      "available_from": "2026-08-21",
+      "deposit_amount": 90000,
+      "listing_type": "whole flat",
+      "food_preference": "any",
+      "smoking_preference": "smoking allowed",
+      "neighborhood_guidance": {
+        "locality": "Koramangala",
+        "safety": "Generally regarded as a busy, well-lit residential-commercial mixed area with steady evening footfall around cafes and retail strips. As with any dense Bengaluru neighbourhood, check building security and late-night last-mile options for your block.",
+        "amenities": "Strong everyday amenity coverage: grocery and convenience retail, cafes, gyms, clinics, and schools within short travel of most residential pockets. Forum and Sony Signal areas are common amenity anchors.",
+        "transit_character": "Well connected by arterial roads (80 Feet / 100 Feet Road) with frequent bus coverage and growing metro access via nearby Purple Line catchments. Commute times vary sharply with peak traffic toward Outer Ring Road and CBD.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      }
+    },
+    {
+      "listing_id": "blr-wfd-501",
+      "source_url": "https://bengaluru.rent/#listing-wfd-501",
+      "location": "Bengaluru",
+      "locality": "Whitefield",
+      "rent": 29000,
+      "bedrooms": 2,
+      "furnishing": "semi-furnished",
+      "amenities": [
+        "parking",
+        "gym",
+        "pool"
+      ],
+      "society_name": "ITPL Side Residences",
+      "square_footage": 1080.0,
+      "available_from": "2026-09-20",
+      "deposit_amount": 58000,
+      "listing_type": "whole flat",
+      "food_preference": "any",
+      "smoking_preference": "smoking allowed",
+      "neighborhood_guidance": {
+        "locality": "Whitefield",
+        "safety": "Large IT-residential belt with gated communities and busy commercial nodes. Safety perception is generally tied to society security and main-road lighting; verify last-mile access for specific campuses or back lanes.",
+        "amenities": "Malls, hypermarkets, hospitals, and schools serve the wider Whitefield catchment. Amenity quality is strong near ITPL / Hope Farm / Varthur Road corridors.",
+        "transit_character": "Historically road-heavy commuting with Namma Metro Purple Line extension improving rail options. Peak-hour ORR and Whitefield Main Road delays remain common.",
+        "sources": [
+          {
+            "title": "bengaluru.rent",
+            "url": "https://bengaluru.rent/",
+            "snippet": "Public rental listings map for Bengaluru."
+          },
+          {
+            "title": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/copyright",
+            "snippet": "Open map data for transit and amenities near listings."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Property Scout - Awaiting Confirmation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1c1c17",
+                        "outline": "#6f7976",
+                        "on-surface": "#1c1c17",
+                        "secondary-fixed-dim": "#b7cbc4",
+                        "inverse-primary": "#86d5c3",
+                        "on-secondary-fixed-variant": "#394a45",
+                        "on-surface-variant": "#3f4946",
+                        "tertiary-fixed-dim": "#bacac1",
+                        "surface-container-high": "#ece8e0",
+                        "primary-fixed": "#a2f2de",
+                        "on-primary-fixed": "#00201a",
+                        "error-text": "#8A2F2F",
+                        "inverse-surface": "#31302b",
+                        "on-secondary-fixed": "#0d1f1b",
+                        "tertiary-fixed": "#d6e6dd",
+                        "surface-dim": "#dddad2",
+                        "on-tertiary-container": "#cdddd4",
+                        "tertiary": "#3c4a43",
+                        "on-primary-container": "#99e8d5",
+                        "primary-fixed-dim": "#86d5c3",
+                        "background": "#fdf9f1",
+                        "surface-container-low": "#f7f3eb",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#3b4a43",
+                        "secondary": "#50625d",
+                        "inverse-on-surface": "#f4f0e8",
+                        "on-error-container": "#93000a",
+                        "surface": "rgba(255, 255, 255, 0.88)",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f1ede5",
+                        "surface-variant": "#e6e2da",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#0e6a5b",
+                        "primary": "#005145",
+                        "on-tertiary-fixed": "#101e19",
+                        "outline-variant": "#bec9c5",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#566863",
+                        "assistant-bubble": "#FFFDF9",
+                        "secondary-container": "#d3e7e0",
+                        "primary-container": "#0f6b5c",
+                        "recording-red": "#EF4444",
+                        "on-secondary": "#ffffff",
+                        "muted": "#5C6B64",
+                        "tertiary-container": "#53625b",
+                        "secondary-fixed": "#d3e7e0",
+                        "surface-container-highest": "#e6e2da",
+                        "error-bg": "#FDEEEE",
+                        "user-bubble": "#E8F2EF",
+                        "surface-bright": "#fdf9f1",
+                        "on-primary-fixed-variant": "#005144",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "lg": "40px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "base": "4px",
+                        "max-width": "1200px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Libre Caslon Text"],
+                        "code-sm": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "code-sm": ["13px", { "lineHeight": "1.5", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fdf9f1;
+            color: #1c1c17;
+        }
+        .structural-border {
+            border: 1px solid rgba(28, 42, 36, 0.12);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background bg-background min-h-screen flex">
+<!-- SideNavBar (from JSON) -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 border-r border-on-background/10 dark:border-outline-variant bg-background dark:bg-on-background py-lg px-sm z-50">
+<div class="mb-lg px-sm">
+<h1 class="text-headline-sm font-headline-sm text-on-background dark:text-inverse-on-surface">Property Scout</h1>
+<p class="text-label-caps font-label-caps text-on-surface-variant mt-xs">Your Real Estate Advisor</p>
+</div>
+<div class="flex-1 space-y-sm">
+<a class="flex items-center space-x-sm py-xs px-sm rounded-lg text-primary dark:text-primary-fixed-dim border-r-2 border-primary dark:border-primary-fixed-dim bg-secondary-container/30 hover:bg-surface-container-high transition-colors scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-caps font-label-caps">Home</span>
+</a>
+<a class="flex items-center space-x-sm py-xs px-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-label-caps font-label-caps">Shortlist</span>
+</a>
+<a class="flex items-center space-x-sm py-xs px-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-label-caps font-label-caps">History</span>
+</a>
+</div>
+<div class="mt-auto px-sm">
+<button class="w-full bg-primary text-on-primary text-label-caps font-label-caps py-sm rounded-lg uppercase tracking-wider hover:bg-primary-container transition-colors">New Search</button>
+</div>
+</nav>
+<!-- TopAppBar (from JSON) -->
+<header class="md:hidden flex justify-between items-center w-full px-lg py-xs docked full-width top-0 sticky z-40 bg-surface/88 dark:bg-surface-dim/88 border-b border-on-background/10 dark:border-outline-variant backdrop-blur-md">
+<div class="text-headline-sm font-headline-sm text-primary dark:text-primary-fixed-dim">Property Scout</div>
+<div class="flex space-x-sm text-on-surface-variant dark:text-surface-variant">
+<button class="hover:text-primary-container dark:hover:text-on-primary-container transition-colors"><span class="material-symbols-outlined">account_circle</span></button>
+<button class="hover:text-primary-container dark:hover:text-on-primary-container transition-colors"><span class="material-symbols-outlined">settings</span></button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-0 md:ml-64 p-md md:p-lg lg:p-xl max-w-max-width mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-lg relative">
+<!-- Central Area: AI Conversation & Summary -->
+<section class="lg:col-span-8 flex flex-col space-y-lg h-full max-h-[85vh] overflow-y-auto pr-sm pb-xl">
+<!-- Assistant Chat Bubble -->
+<div class="flex items-start max-w-3xl">
+<div class="bg-assistant-bubble p-sm rounded-lg structural-border text-body-md font-body-md text-on-background relative">
+<p class="">I've summarized your search. Should I look for matches now?</p>
+</div>
+</div>
+<!-- Summary Card -->
+<div class="bg-surface p-lg rounded-xl structural-border flex flex-col space-y-md">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-sm">
+<h2 class="text-headline-sm font-headline-sm text-primary">Search Criteria Parameters</h2>
+<span class="bg-secondary-container/50 text-primary px-xs py-base rounded-full text-label-caps font-label-caps uppercase structural-border border-primary/20">Ready</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col space-y-xs">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase">Locality</span>
+<div class="flex items-center space-x-xs text-body-lg font-body-lg">
+<span class="material-symbols-outlined text-outline">location_on</span>
+<span class="">Koramangala, Bangalore</span>
+</div>
+</div>
+<div class="flex flex-col space-y-xs">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase">Configuration</span>
+<div class="flex items-center space-x-xs text-body-lg font-body-lg">
+<span class="material-symbols-outlined text-outline">bed</span>
+<span class="">2BHK Premium</span>
+</div>
+</div>
+<div class="flex flex-col space-y-xs md:col-span-2">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase">Max Budget</span>
+<div class="flex items-center space-x-xs">
+<span class="text-headline-md font-headline-md text-primary font-code-sm">₹35,000<span class="text-body-md font-body-md text-on-surface-variant">/mo</span></span>
+</div>
+</div>
+</div>
+<div class="pt-sm mt-sm border-t border-outline-variant/30 text-body-md font-body-md text-on-surface-variant italic">
+                    Focusing on well-ventilated properties with immediate availability.
+                </div>
+</div>
+<!-- Sticky Bottom CTA -->
+<div class="mt-auto pt-lg flex justify-center sticky bottom-0 bg-gradient-to-t from-background via-background to-transparent pb-lg z-10">
+<button class="bg-primary text-on-primary px-xl py-sm rounded-lg text-label-caps font-label-caps uppercase tracking-wider hover:bg-primary-container transition-colors shadow-sm flex items-center space-x-sm group structural-border border-primary">
+<span class="">Confirm Search</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="mt-auto w-full max-w-3xl mx-auto relative pt-md">
+    <div class="flex items-center gap-xs bg-surface border border-primary/30 rounded-full px-sm py-xs shadow-sm focus-within:border-primary transition-colors">
+        <button class="text-primary hover:text-primary-container p-2 rounded-full transition-colors flex items-center justify-center">
+            <span class="material-symbols-outlined text-[20px]">add</span>
+        </button>
+        <input autofocus="" class="flex-1 bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-background placeholder-outline py-2" placeholder="Type or speak..." type="text">
+        <button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm relative group">
+            <span class="material-symbols-outlined text-[18px]">mic</span>
+            <div class="absolute inset-0 rounded-full border border-recording-red/50 animate-ping opacity-0 group-hover:opacity-100"></div>
+        </button>
+    </div>
+    <p class="text-center text-label-caps text-muted mt-xs">Voice-first discovery enabled</p>
+</div></section>
+<!-- Right Panel: Preferences Sticky Sidebar -->
+<aside class="hidden lg:block lg:col-span-4 h-full">
+<div class="sticky top-lg bg-surface p-sm rounded-lg structural-border space-y-sm"><div class="p-md border-b border-on-surface/10 sticky top-0 bg-surface/90 backdrop-blur-sm z-10">
+    <h2 class="font-headline-sm text-headline-sm text-on-background flex items-center gap-xs">
+        <span class="material-symbols-outlined text-primary">tune</span>
+        Preferences
+    </h2>
+</div>
+<div class="p-md flex flex-col gap-md">
+    <!-- Preference Item: Locality -->
+    <div class="bg-surface border border-on-surface/10 rounded p-sm flex items-start gap-sm">
+        <div class="w-8 h-8 rounded bg-secondary-container text-primary flex items-center justify-center shrink-0 mt-1">
+            <span class="material-symbols-outlined text-[18px]">location_on</span>
+        </div>
+        <div>
+            <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Locality</p>
+            <p class="font-body-md text-body-md text-on-background font-medium">Koramangala</p>
+        </div>
+    </div>
+    <!-- Preference Item: Bedrooms -->
+    <div class="bg-surface border border-on-surface/10 rounded p-sm flex items-start gap-sm">
+        <div class="w-8 h-8 rounded bg-secondary-container text-primary flex items-center justify-center shrink-0 mt-1">
+            <span class="material-symbols-outlined text-[18px]">bed</span>
+        </div>
+        <div>
+            <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Bedrooms</p>
+            <p class="font-body-md text-body-md text-on-background font-medium">2BHK</p>
+        </div>
+    </div>
+    <!-- Preference Item: Rent -->
+    <div class="bg-surface border border-on-surface/10 rounded p-sm flex items-start gap-sm">
+        <div class="w-8 h-8 rounded bg-secondary-container text-primary flex items-center justify-center shrink-0 mt-1">
+            <span class="material-symbols-outlined text-[18px]">payments</span>
+        </div>
+        <div>
+            <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Max Rent</p>
+            <p class="font-body-md text-body-md text-on-background font-medium">₹35,000</p>
+        </div>
+    </div>
+    <!-- AI Insight Box -->
+    <div class="mt-lg pt-md border-t border-on-surface/10">
+        <div class="bg-assistant-bubble p-sm rounded-DEFAULT structural-border">
+            <p class="font-body-md text-body-md text-on-background text-sm">
+                "I've filtered out properties on the main 80ft road to prioritize the quiet streets you mentioned earlier."
+            </p>
+        </div>
+    </div>
+</div></div>
+</aside>
+</main>
+
+
+</body></html>

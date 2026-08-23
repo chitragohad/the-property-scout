@@ -1,0 +1,693 @@
+PROJECT: Voice-First AI Property Scout
+
+Build a deployed voice-first AI property discovery assistant for Bengaluru that helps renters/buyers find properties based on spoken preferences, evaluates whether listings actually fit their lifestyle, explains why listings were shortlisted, allows voice-based refinement, and books a site visit.
+
+The core product principle is:
+
+"Don't just help users find properties. Help them understand whether a property actually fits their life."
+
+The assistant should combine:
+1. Real currently available property listings
+2. Real neighborhood and geospatial data
+3. Voice-based conversational interaction
+4. RAG-grounded explanations with citations
+5. Transparent shortlist reasoning
+6. Voice-based shortlist refinement
+7. Site-visit booking
+8. n8n automation to generate and email a PDF shortlist
+
+--------------------------------------------------
+1. PRIMARY USER PROBLEM
+--------------------------------------------------
+
+People can easily find property listings, but they struggle to judge whether a property is actually suitable for their lifestyle.
+
+For example:
+
+- Is the commute realistic?
+- Is the property actually within a reasonable distance of transit?
+- Is the neighborhood suitable for their needs?
+- Does the property have the required amenities?
+- Is paying more for an additional bedroom worthwhile?
+- Why was one property shortlisted while another was rejected?
+
+The product should answer these questions using real data instead of generic AI assumptions.
+
+--------------------------------------------------
+2. CORE USER EXPERIENCE
+--------------------------------------------------
+
+The primary interaction should be voice-first.
+
+Example:
+
+User:
+"I'm looking for a 2BHK in Koramangala, budget 35k, need parking, close to a metro station."
+
+Assistant should:
+
+1. Extract:
+   - Location = Koramangala
+   - Bedrooms = 2
+   - Budget = ₹35,000/month
+   - Must-have = parking
+   - Preference = near metro
+
+2. Identify missing critical information.
+
+3. Ask clarification questions only when genuinely required.
+Maximum 5 clarification questions.
+
+4. Confirm the final constraints before searching.
+
+Example:
+
+"Got it. You're looking for a 2BHK in Koramangala under ₹35,000/month, with parking and convenient access to a metro station. I'll use these preferences to find available options."
+
+5. Search the real listing dataset.
+
+6. Enrich each candidate listing with:
+   - Nearby transit
+   - Nearby amenities
+   - Neighborhood information
+   - Relevant practical guidance
+
+7. Rank the listings against the user's preferences.
+
+8. Present a shortlist.
+
+--------------------------------------------------
+3. VOICE-BASED SHORTLIST REFINEMENT
+--------------------------------------------------
+
+The user must be able to modify the shortlist conversationally.
+
+Examples:
+
+"Drop anything above 40k."
+
+"Only show me places within 15 minutes of a metro station."
+
+"I need something pet-friendly."
+
+"Add one more option with a balcony."
+
+"Remove anything without parking."
+
+"Show me something cheaper."
+
+"Why did you remove that property?"
+
+Important:
+
+Only modify the affected constraint.
+
+DO NOT regenerate the entire experience unnecessarily.
+
+Maintain the user's existing preferences and conversation context.
+
+Example:
+
+Initial:
+2BHK + Koramangala + ₹35K + parking
+
+User:
+"Actually, increase my budget to ₹40K."
+
+Update:
+Budget = ₹40K
+
+Keep:
+2BHK
+Koramangala
+Parking
+
+--------------------------------------------------
+4. SHORTLIST REASONING
+--------------------------------------------------
+
+Every listing must have a transparent reason for being included or excluded.
+
+The assistant should be able to answer:
+
+"Why did you pick this one?"
+
+"Why didn't you pick this property?"
+
+"Why is this better than the other option?"
+
+"Is the commute realistic?"
+
+"What's this neighborhood actually like?"
+
+"Does this area have metro access?"
+
+"Is this property within my budget?"
+
+Reasoning should be based on actual data.
+
+Example:
+
+"Shortlisted because it matches your 2BHK requirement, is within your ₹35K budget, has parking, and has multiple transit points nearby."
+
+Do NOT say:
+
+"This is a great neighborhood."
+
+Instead say:
+
+"OpenStreetMap shows X metro/transit points within the defined radius. The neighborhood guide describes the area as [...]."
+
+Every neighborhood claim must have a citation.
+
+--------------------------------------------------
+5. DATA SOURCES
+--------------------------------------------------
+
+PROPERTY LISTINGS
+
+Use:
+https://bengaluru.rent/
+
+Only use listings that are explicitly marked as currently available.
+
+Exclude listings marked:
+
+"Not for rent"
+
+or any equivalent transparency-only status.
+
+Listings must retain a traceable source reference back to the original scraped listing.
+
+Required listing fields:
+
+- listing_id
+- source_url
+- location
+- locality
+- rent
+- bedrooms
+- furnishing
+- amenities
+- society_name
+- square_footage
+- availability_status
+- latitude
+- longitude
+
+IMPORTANT:
+
+Remove ALL PII before data enters:
+
+- database
+- application
+- UI
+- logs
+- LLM context
+
+Never store or display:
+
+- owner names
+- agent names
+- phone numbers
+- personal contact information
+
+--------------------------------------------------
+6. OPENSTREETMAP MCP
+--------------------------------------------------
+
+The orchestration layer MUST integrate the OpenStreetMap MCP.
+
+Repository:
+
+https://github.com/jagan-shanmugam/open-streetmap-mcp
+
+Use it for:
+
+- Nearby metro stations
+- Transit points
+- Restaurants
+- Schools
+- Hospitals
+- Grocery stores
+- Parks
+- Other POIs
+
+The system must NOT invent nearby places.
+
+Example workflow:
+
+Listing coordinates
+        ↓
+OpenStreetMap MCP
+        ↓
+Nearby POIs
+        ↓
+Structured neighborhood context
+        ↓
+Shortlist ranking / explanation
+
+The demo must clearly demonstrate an actual OpenStreetMap MCP call.
+
+--------------------------------------------------
+7. RAG
+--------------------------------------------------
+
+Use RAG for neighborhood-level practical guidance.
+
+Examples:
+
+- neighborhood character
+- safety-related public information
+- lifestyle context
+- transit character
+- amenities context
+- local area descriptions
+
+Use real public sources such as:
+
+- Wikipedia
+- city/neighborhood guides
+- other trustworthy public sources
+
+Every retrieved source must retain:
+
+- title
+- URL
+- source snippet/content reference
+- locality/topic
+
+Every neighborhood claim shown to the user must have a citation.
+
+Never use the LLM's general knowledge to make unsupported neighborhood claims.
+
+If reliable information cannot be found:
+
+Say:
+
+"I couldn't find reliable public information to verify this."
+
+Do NOT guess.
+
+--------------------------------------------------
+8. SHORTLIST RANKING
+--------------------------------------------------
+
+Create a transparent ranking/scoring system.
+
+Suggested scoring dimensions:
+
+- Budget match
+- Bedroom match
+- Location match
+- Must-have amenities
+- Transit proximity
+- Lifestyle preferences
+- Availability
+
+Separate:
+
+HARD CONSTRAINTS
+
+from
+
+SOFT PREFERENCES.
+
+Example:
+
+Hard constraints:
+- 2BHK
+- Koramangala
+- <= ₹35K
+- Parking
+
+Soft preferences:
+- Near metro
+- Balcony
+- Pet-friendly
+
+A property failing a hard constraint should normally be excluded.
+
+Soft preferences should affect ranking.
+
+Store the reason for every inclusion/exclusion.
+
+Example:
+
+{
+  "listing": "ABC",
+  "score": 87,
+  "matched": [
+    "2BHK",
+    "within budget",
+    "parking",
+    "near transit"
+  ],
+  "missing": [
+    "balcony"
+  ],
+  "reason": "Strong match for all mandatory requirements."
+}
+
+--------------------------------------------------
+9. COMPANION UI
+--------------------------------------------------
+
+Keep the UI minimal and modern.
+
+Required components:
+
+A. Voice interaction
+- Microphone button
+- Recording state
+- Live transcript
+- Assistant response
+- Conversation history
+
+B. Preference summary
+Show:
+
+Location
+Budget
+Bedrooms
+Must-haves
+Preferences
+Commute point
+
+C. Shortlist cards
+
+Each card should include:
+
+- Property/society name
+- Locality
+- Rent
+- Bedrooms
+- Area
+- Key amenities
+- Availability
+- Match score
+- Why it was shortlisted
+
+D. Neighborhood snapshot
+
+For each listing show:
+
+- Transit
+- Nearby amenities
+- Practical neighborhood notes
+- Sources/citations
+
+E. Sources / References
+
+Clearly show citations for:
+
+- neighborhood claims
+- transit claims
+- amenity claims
+
+F. Visit booking
+
+Show:
+
+- preferred date
+- available time slots
+- confirmation state
+- confirmation code
+
+--------------------------------------------------
+10. SITE VISIT BOOKING
+--------------------------------------------------
+
+Once the user has a shortlist they like, allow them to book a site visit through voice.
+
+Example:
+
+User:
+"I like the second one. Can I visit Saturday afternoon?"
+
+Assistant:
+"Saturday afternoon has two available slots: 2 PM and 4 PM. Which would you prefer?"
+
+User:
+"4 PM."
+
+Assistant:
+"Your site visit is confirmed for Saturday at 4 PM. Your confirmation code is ABC123."
+
+The booking should be reflected in the UI.
+
+--------------------------------------------------
+11. n8n WORKFLOW
+--------------------------------------------------
+
+Implement an n8n workflow that:
+
+1. Receives the final shortlist
+2. Formats the listings and neighborhood information
+3. Creates a PDF
+4. Emails the PDF to the user
+
+PDF should include:
+
+- User preferences
+- Shortlisted properties
+- Rent
+- Bedrooms
+- Amenities
+- Match reasoning
+- Neighborhood snapshot
+- Sources/citations
+- Site visit information if booked
+
+The workflow should be demonstrable.
+
+--------------------------------------------------
+12. FAILURE STATES
+--------------------------------------------------
+
+The assistant must gracefully handle:
+
+No matching listings
+
+Say:
+"I couldn't find listings that meet all your requirements. Would you like to relax your budget or location constraint?"
+
+Missing listing data
+
+Say:
+"This listing doesn't have enough verified information for me to evaluate that requirement."
+
+Missing neighborhood data
+
+Say:
+"I couldn't find a reliable source to verify that information."
+
+No nearby transit
+
+Do not say:
+"There is no metro nearby."
+
+Instead:
+"I couldn't find a nearby transit point in the available OpenStreetMap data."
+
+Unavailable listing
+
+Remove it from the active shortlist.
+
+--------------------------------------------------
+13. CONVERSATION MEMORY
+--------------------------------------------------
+
+Maintain preferences throughout the session.
+
+Example:
+
+User:
+"I want a 2BHK under 35K."
+
+Later:
+
+"Show me something with a balcony."
+
+Interpret this as:
+
+2BHK
+under ₹35K
+balcony
+
+Do not ask the user to repeat previously provided information.
+
+--------------------------------------------------
+14. PRIVACY
+--------------------------------------------------
+
+Never expose PII.
+
+Before storing or passing scraped listing data to an LLM:
+
+REMOVE:
+
+- names
+- phone numbers
+- email addresses
+- agent details
+- owner details
+
+The system should also avoid logging PII.
+
+--------------------------------------------------
+15. DESIGN PRINCIPLES
+--------------------------------------------------
+
+The product should feel:
+
+- Conversational
+- Trustworthy
+- Transparent
+- Fast
+- Minimal
+- Data-grounded
+
+Avoid:
+
+- Generic AI chat UI
+- Long paragraphs
+- Fake neighborhood claims
+- Unsupported recommendations
+- Excessive screens
+- Feature overload
+
+The core experience should always answer:
+
+"Why should I consider this property?"
+
+--------------------------------------------------
+16. RECOMMENDED ARCHITECTURE
+--------------------------------------------------
+
+VOICE INPUT
+    ↓
+Speech-to-Text
+    ↓
+Conversation / Intent Layer
+    ↓
+Preference Extraction
+    ↓
+Constraint Manager
+    ↓
+Property Retrieval
+    ↓
+OpenStreetMap MCP
+    ↓
+Neighborhood RAG
+    ↓
+Ranking Engine
+    ↓
+Explanation Generator
+    ↓
+Shortlist
+    ↓
+Voice Response + UI
+    ↓
+Site Visit Booking
+    ↓
+n8n
+    ↓
+PDF Generation
+    ↓
+Email
+
+Keep ranking/business logic deterministic where possible.
+
+Use the LLM for:
+
+- conversational understanding
+- preference extraction
+- clarification
+- natural language explanations
+- voice responses
+
+Do NOT rely on the LLM for factual neighborhood data.
+
+--------------------------------------------------
+17. DEMO SCENARIO
+--------------------------------------------------
+
+The final application should support this complete flow:
+
+1. User clicks microphone.
+
+2. User says:
+
+"I'm looking for a 2BHK in Koramangala under 35,000. I need parking and I want it close to a metro station."
+
+3. Assistant extracts preferences.
+
+4. Assistant asks only necessary clarification questions.
+
+5. Assistant confirms preferences.
+
+6. System retrieves currently available listings.
+
+7. System filters and ranks listings.
+
+8. System calls OpenStreetMap MCP for nearby POIs/transit.
+
+9. System retrieves neighborhood information through RAG.
+
+10. System produces 3–5 shortlisted listings.
+
+11. UI displays shortlist cards.
+
+12. User asks:
+
+"Why did you pick the first one?"
+
+13. Assistant gives a grounded explanation with sources visible in UI.
+
+14. User says:
+
+"Drop anything above 32K and show me something pet-friendly."
+
+15. Only the relevant shortlist constraints are updated.
+
+16. User selects a property.
+
+17. User says:
+
+"I want to visit this Saturday at 4."
+
+18. Assistant confirms available slot.
+
+19. Booking confirmation is displayed.
+
+20. User clicks:
+
+"Email me this shortlist."
+
+21. n8n generates a PDF.
+
+22. PDF is emailed to the user.
+
+--------------------------------------------------
+18. SUCCESS CRITERIA
+--------------------------------------------------
+
+The project is successful if a user can complete the entire journey using voice:
+
+PREFERENCES
+→ SEARCH
+→ SHORTLIST
+→ UNDERSTAND
+→ REFINE
+→ COMPARE
+→ BOOK
+→ RECEIVE PDF
+
+And every factual recommendation is traceable to real data.
+
+Most importantly:
+
+The assistant should never pretend to know something it cannot verify.
+
+If the data isn't available, say so clearly.

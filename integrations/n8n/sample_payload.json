@@ -1,0 +1,40 @@
+{
+  "session_id": "sess-example",
+  "recipient_email": "renter@example.com",
+  "constraints": {
+    "hard": {
+      "bedrooms": 2,
+      "locality": "Koramangala",
+      "max_rent": 35000,
+      "must_have_amenities": ["parking"]
+    },
+    "soft": {
+      "near_metro": true,
+      "pet_friendly": null,
+      "balcony": null
+    },
+    "commute_point": null
+  },
+  "shortlist": [],
+  "citations": [],
+  "booking": {
+    "listing_id": "lst-example",
+    "date": "2026-08-22",
+    "slot": "16:00",
+    "status": "confirmed",
+    "confirmation_code": "ABC123"
+  },
+  "selected_listing_id": "lst-example",
+  "export_view": {
+    "preferences_summary": {},
+    "properties": [],
+    "session_citations": [],
+    "visit": {
+      "listing_id": "lst-example",
+      "date": "2026-08-22",
+      "slot": "16:00",
+      "status": "confirmed",
+      "confirmation_code": "ABC123"
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "title": "Property Scout AI Evaluation Results",
+  "generated_at": "2026-08-23T06:12:43.216329+00:00",
+  "summary": {
+    "passed": 22,
+    "total": 22,
+    "status": "PASS"
+  },
+  "categories": [
+    {
+      "name": "Edit Correctness",
+      "passed": 8,
+      "total": 8,
+      "cases": [
+        {
+          "category": "Edit Correctness",
+          "name": "Change budget",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Edit Correctness",
+          "name": "Change location",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Edit Correctness",
+          "name": "Add preference",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Edit Correctness",
+          "name": "Regenerate shortlist",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Edit Correctness",
+          "name": "Remove listing",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Edit Correctness",
+          "name": "Preserve unrelated state",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Edit Correctness",
+          "name": "Detector: unintended budget change",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Edit Correctness",
+          "name": "Detector: remove listing by id",
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "Feasibility",
+      "passed": 6,
+      "total": 6,
+      "cases": [
+        {
+          "category": "Feasibility",
+          "name": "Budget compliance",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Feasibility",
+          "name": "Must-have compliance",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Feasibility",
+          "name": "Commute consistency",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Feasibility",
+          "name": "Detector: budget violation",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Feasibility",
+          "name": "Detector: must-have violation",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Feasibility",
+          "name": "Detector: unsupported commute minutes",
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "name": "Grounding & Hallucination",
+      "passed": 8,
+      "total": 8,
+      "cases": [
+        {
+          "category": "Grounding & Hallucination",
+          "name": "Listing IDs grounded",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Grounding & Hallucination",
+          "name": "Availability grounded",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Grounding & Hallucination",
+          "name": "Neighborhood citations",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Grounding & Hallucination",
+          "name": "Missing neighborhood uncertainty",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Grounding & Hallucination",
+          "name": "Detector: fake listing ID",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Grounding & Hallucination",
+          "name": "Detector: unavailable listing claim",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Grounding & Hallucination",
+          "name": "Detector: unsupported neighborhood citation",
+          "passed": true,
+          "detail": ""
+        },
+        {
+          "category": "Grounding & Hallucination",
+          "name": "Detector: missing uncertainty language",
+          "passed": true,
+          "detail": ""
+        }
+      ]
+    }
+  ]
+}

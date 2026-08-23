@@ -1,0 +1,16 @@
+{
+  "name": "property-scout",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "dev:web": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "lint": "pnpm --filter web lint",
+    "evals": "cd apps/api && .venv/bin/python ../../evals/run_evals.py",
+    "evals:report": "cd apps/api && .venv/bin/python ../../evals/run_evals.py --format both"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "session_id": "sess-test",
+  "recipient_email": "renter@example.com",
+  "constraints": {
+    "hard": {
+      "bedrooms": null,
+      "locality": null,
+      "max_rent": null,
+      "must_have_amenities": []
+    },
+    "soft": {
+      "near_metro": null,
+      "pet_friendly": null,
+      "balcony": null
+    },
+    "commute_point": null
+  },
+  "shortlist": [
+    {
+      "listing": {
+        "listing_id": "blr-km-201",
+        "source_url": "https://bengaluru.rent/#x",
+        "location": "Bengaluru",
+        "locality": "Koramangala",
+        "rent": 32000,
+        "bedrooms": 2,
+        "furnishing": "semi-furnished",
+        "amenities": [
+          "parking"
+        ],
+        "society_name": "Sony Signal Residency",
+        "square_footage": 1050,
+        "available_from": "2026-08-21",
+        "deposit_amount": 64000,
+        "listing_type": "whole flat",
+        "food_preference": "any",
+        "smoking_preference": "any",
+        "gender": null,
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "s",
+          "amenities": "a",
+          "transit_character": "t",
+          "sources": []
+        },
+        "availability_status": "available",
+        "latitude": 12.93,
+        "longitude": 77.62
+      },
+      "rank": {
+        "listing_id": "blr-km-201",
+        "score": 88.0,
+        "matched": [
+          "2BHK",
+          "within budget",
+          "parking"
+        ],
+        "missing": [],
+        "excluded": false,
+        "exclusion_reasons": [],
+        "reason": "Strong match for all mandatory requirements."
+      },
+      "citations": [
+        {
+          "id": "km-safety",
+          "title": "Koramangala \u2014 Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Koramangala",
+          "snippet": "busy area",
+          "locality": "Koramangala",
+          "topic": "safety"
+        }
+      ],
+      "osm": {
+        "listing_id": "blr-km-201",
+        "pois": [
+          {
+            "name": "Demo Metro",
+            "category": "metro",
+            "lat": 12.93,
+            "lon": 77.62,
+            "distance_m": 200.0
+          }
+        ],
+        "raw_call_id": "test-1",
+        "empty_reason": null
+      },
+      "neighborhood_notes": [
+        {
+          "topic": "safety",
+          "text": "Koramangala is a busy well-lit mixed area.",
+          "citation_id": "km-safety"
+        }
+      ]
+    }
+  ],
+  "citations": [],
+  "booking": null,
+  "selected_listing_id": null,
+  "export_view": {
+    "preferences_summary": {
+      "hard": {
+        "bedrooms": null,
+        "locality": null,
+        "max_rent": null,
+        "must_have_amenities": []
+      },
+      "soft": {
+        "near_metro": null,
+        "pet_friendly": null,
+        "balcony": null
+      },
+      "commute_point": null
+    },
+    "properties": [
+      {
+        "listing_id": "blr-km-201",
+        "society_name": "Sony Signal Residency",
+        "locality": "Koramangala",
+        "rent": 32000,
+        "bedrooms": 2,
+        "amenities": [
+          "parking"
+        ],
+        "match_score": 88.0,
+        "match_reason": "Strong match for all mandatory requirements.",
+        "matched": [
+          "2BHK",
+          "within budget",
+          "parking"
+        ],
+        "neighborhood_notes": [
+          {
+            "topic": "safety",
+            "text": "Koramangala is a busy well-lit mixed area.",
+            "citation_id": "km-safety"
+          }
+        ],
+        "neighborhood_guidance": {
+          "locality": "Koramangala",
+          "safety": "s",
+          "amenities": "a",
+          "transit_character": "t",
+          "sources": []
+        },
+        "citations": [
+          {
+            "id": "km-safety",
+            "title": "Koramangala \u2014 Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Koramangala",
+            "snippet": "busy area",
+            "locality": "Koramangala",
+            "topic": "safety"
+          }
+        ]
+      }
+    ],
+    "session_citations": [],
+    "visit": null
+  }
+}
