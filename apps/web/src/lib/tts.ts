@@ -23,7 +23,6 @@ const LISTING_SCORE_RE = /\(score\s[\d.]+\)/i;
 
 type VoiceMode = "gemini" | "browser";
 
-let audioUnlocked = false;
 let voiceConfig: VoiceConfig | null = null;
 let voiceConfigPromise: Promise<VoiceConfig> | null = null;
 let preferredMode: VoiceMode | null = null;
@@ -76,11 +75,7 @@ export function unlockSpeechAudio(): void {
     "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==",
   );
   silent.volume = 0.01;
-  void silent.play()
-    .then(() => {
-      audioUnlocked = true;
-    })
-    .catch(() => {});
+  void silent.play().catch(() => {});
 
   if ("speechSynthesis" in window) {
     try {
@@ -90,8 +85,6 @@ export function unlockSpeechAudio(): void {
       /* ignore */
     }
   }
-
-  audioUnlocked = true;
 }
 
 /** @deprecated session keep-alive removed — Audio element is the async path. */
