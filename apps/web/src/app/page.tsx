@@ -96,7 +96,7 @@ export default function Home() {
         setN8nEnabled(Boolean(health.n8n_enabled));
         if (!ok) {
           setError(
-            "API unreachable. Start it with: uvicorn app.main:app --reload --port 8000",
+            "API unreachable. On Vercel: deploy apps/api and set API_ORIGIN on the web project.",
           );
           return;
         }

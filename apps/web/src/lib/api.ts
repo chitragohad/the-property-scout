@@ -20,21 +20,55 @@ export type ExportResponse = {
   delivered?: boolean;
 };
 
-const API_URL =
-  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ?? "http://localhost:8000";
+/**
+ * Resolve API base URL.
+ * - Local: http://localhost:8000
+ * - Vercel: same-origin /api-backend proxy (avoids CORS + mixed-content localhost)
+ * - Override: NEXT_PUBLIC_API_URL=https://your-api.vercel.app
+ */
+function resolveApiUrl(): string {
+  const configured = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "").trim();
+  if (configured && !configured.includes("localhost")) {
+    return configured;
+  }
+  // On Vercel builds, never bake localhost into the client bundle.
+  if (process.env.VERCEL === "1" || process.env.NEXT_PUBLIC_USE_API_PROXY === "1") {
+    return "/api-backend";
+  }
+  if (configured) return configured;
+  return "http://localhost:8000";
+}
+
+const API_URL = resolveApiUrl();
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const response = await fetch(`${API_URL}${path}`, {
-    ...init,
-    headers: {
-      "Content-Type": "application/json",
-      ...(init?.headers ?? {}),
-    },
-    cache: "no-store",
-  });
+  let response: Response;
+  try {
+    response = await fetch(`${API_URL}${path}`, {
+      ...init,
+      headers: {
+        "Content-Type": "application/json",
+        ...(init?.headers ?? {}),
+      },
+      cache: "no-store",
+    });
+  } catch {
+    throw new Error(
+      API_URL.startsWith("/")
+        ? "Cannot reach the API proxy. Set API_ORIGIN on the web project to your FastAPI Vercel URL, then redeploy."
+        : `Cannot reach API at ${API_URL}. Deploy the API and set NEXT_PUBLIC_API_URL / API_ORIGIN.`,
+    );
+  }
   if (!response.ok) {
     const detail = await response.text().catch(() => "");
-    throw new Error(detail || `HTTP ${response.status}`);
+    let message = detail || `HTTP ${response.status}`;
+    try {
+      const parsed = JSON.parse(detail) as { detail?: string };
+      if (parsed.detail) message = parsed.detail;
+    } catch {
+      /* keep raw */
+    }
+    throw new Error(message);
   }
   return response.json() as Promise<T>;
 }
