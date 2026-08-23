@@ -31,7 +31,7 @@ where = ["."]
 include = ["app*"]
 
 [tool.vercel]
-entrypoint = "app.main:app"
+entrypoint = "index:app"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
