@@ -1,3 +1,4 @@
+import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -7,12 +8,16 @@ from app.config import get_settings
 from app.db.session import init_db
 from app.routers import listings, session, shortlist, snapshots, voice
 
+logger = logging.getLogger(__name__)
 settings = get_settings()
 
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
-    init_db()
+    try:
+        init_db()
+    except Exception as exc:  # noqa: BLE001 — keep /health up on Vercel misconfig
+        logger.exception("Database init failed (listings may be unavailable): %s", exc)
     yield
 
 

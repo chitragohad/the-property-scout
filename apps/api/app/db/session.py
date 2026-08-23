@@ -13,10 +13,24 @@ from app.db.models import Base
 
 
 def default_sqlite_url() -> str:
-    root = Path(__file__).resolve().parents[4]
-    data_dir = root / "data"
-    data_dir.mkdir(parents=True, exist_ok=True)
-    return f"sqlite:///{data_dir / 'property_scout.db'}"
+    """Local SQLite under repo data/; on Vercel use /tmp (read-only FS elsewhere)."""
+    import os
+
+    if os.environ.get("VERCEL") == "1":
+        return "sqlite:////tmp/property_scout.db"
+
+    # apps/api/app/db/session.py → repo root is parents[4] in monorepo checkout
+    candidates = [
+        Path(__file__).resolve().parents[4] / "data",
+        Path("/tmp"),
+    ]
+    for data_dir in candidates:
+        try:
+            data_dir.mkdir(parents=True, exist_ok=True)
+            return f"sqlite:///{data_dir / 'property_scout.db'}"
+        except OSError:
+            continue
+    return "sqlite:////tmp/property_scout.db"
 
 
 @lru_cache
