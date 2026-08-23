@@ -4,6 +4,8 @@
  * Turn replies: browser speech starts with the on-screen text (no /voice/tts wait).
  * Bundled base64 WAV from /turn plays instantly when present.
  * Server WAV is fallback only if browser speech does not start.
+ *
+ * Note: do not reintroduce an unused `audioUnlocked` flag — it fails Vercel `next build`.
  */
 
 import { fetchTtsAudio, fetchVoiceConfig, type VoiceConfig } from "@/lib/api";
