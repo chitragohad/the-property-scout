@@ -23,23 +23,41 @@ export type ExportResponse = {
 /**
  * Resolve API base URL.
  * - Local: http://localhost:8000
- * - Vercel: same-origin /api-backend proxy (avoids CORS + mixed-content localhost)
- * - Override: NEXT_PUBLIC_API_URL=https://your-api.vercel.app
+ * - Vercel: always same-origin /api-backend (server proxies via API_ORIGIN)
+ * - Optional absolute override only when not on Vercel
  */
 function resolveApiUrl(): string {
-  const configured = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "").trim();
-  if (configured && !configured.includes("localhost")) {
-    return configured;
-  }
-  // On Vercel builds, never bake localhost into the client bundle.
+  // On Vercel, never call an absolute URL from the browser — use the proxy.
   if (process.env.VERCEL === "1" || process.env.NEXT_PUBLIC_USE_API_PROXY === "1") {
     return "/api-backend";
   }
+  const configured = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "").trim();
   if (configured) return configured;
   return "http://localhost:8000";
 }
 
 const API_URL = resolveApiUrl();
+
+function friendlyErrorMessage(status: number, detail: string): string {
+  const trimmed = detail.trim();
+  if (
+    trimmed.startsWith("<!DOCTYPE") ||
+    trimmed.startsWith("<html") ||
+    trimmed.includes("This page could not be found")
+  ) {
+    return "API backend returned a web 404 page. Set API_ORIGIN to your FastAPI Vercel URL (apps/api), not the web URL, then redeploy.";
+  }
+  try {
+    const parsed = JSON.parse(trimmed) as { detail?: string };
+    if (parsed.detail) return parsed.detail;
+  } catch {
+    /* not JSON */
+  }
+  if (trimmed.length > 280) {
+    return `API error HTTP ${status}. Check API_ORIGIN and that /health returns JSON.`;
+  }
+  return trimmed || `HTTP ${status}`;
+}
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   let response: Response;
@@ -55,20 +73,18 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   } catch {
     throw new Error(
       API_URL.startsWith("/")
-        ? "Cannot reach the API proxy. Set API_ORIGIN on the web project to your FastAPI Vercel URL, then redeploy."
-        : `Cannot reach API at ${API_URL}. Deploy the API and set NEXT_PUBLIC_API_URL / API_ORIGIN.`,
+        ? "Cannot reach the API proxy. Deploy apps/api, set API_ORIGIN on the web project to that URL, then redeploy."
+        : `Cannot reach API at ${API_URL}.`,
     );
   }
   if (!response.ok) {
     const detail = await response.text().catch(() => "");
-    let message = detail || `HTTP ${response.status}`;
-    try {
-      const parsed = JSON.parse(detail) as { detail?: string };
-      if (parsed.detail) message = parsed.detail;
-    } catch {
-      /* keep raw */
-    }
-    throw new Error(message);
+    throw new Error(friendlyErrorMessage(response.status, detail));
+  }
+  const contentType = response.headers.get("content-type") || "";
+  if (!contentType.includes("application/json")) {
+    const text = await response.text();
+    throw new Error(friendlyErrorMessage(response.status, text));
   }
   return response.json() as Promise<T>;
 }
